@@ -1,1 +1,2 @@
-export * from './lib/shared-ui';
+export * from './lib/atoms/logo/logo';
+export * from './lib/atoms/logo/logo';

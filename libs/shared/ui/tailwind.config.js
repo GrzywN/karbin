@@ -1,7 +1,7 @@
 const { createGlobPatternsForDependencies } = require('@nrwl/react/tailwind');
 const { join } = require('path');
 
-const tailwindWorkspacePreset = require("../../../tailwind-workspace-preset.js");
+const tailwindWorkspacePreset = require('../../../tailwind-workspace-preset.js');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
