@@ -1,4 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority';
+import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
 const logoStyles = cva(['font-cursive', 'text-2xl', 'md:text-3xl'], {
   variants: {
@@ -12,10 +13,18 @@ const logoStyles = cva(['font-cursive', 'text-2xl', 'md:text-3xl'], {
   },
 });
 
-export type LogoProps = VariantProps<typeof logoStyles>;
+type ComponentProps = VariantProps<typeof logoStyles>;
 
-export function Logo(props: LogoProps) {
-  return <h2 className={logoStyles(props)}>Karol Binkowski</h2>;
+export type LogoProps<E extends React.ElementType = 'p'> =
+  OverridableComponentProps<ComponentProps, E>;
+
+export function Logo<E extends React.ElementType = 'h2'>(props: LogoProps<E>) {
+  const { as = 'h2', ...passThroughProps } = props;
+  const Element = as;
+
+  return (
+    <Element className={logoStyles(passThroughProps)}>Karol Binkowski</Element>
+  );
 }
 
 export default Logo;
