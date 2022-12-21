@@ -1,22 +1,22 @@
 import { useCallback } from 'react';
 import { useRouter } from 'next/router';
 
-import type { ReactNode, MouseEvent, MouseEventHandler } from 'react';
+import type { MouseEvent, MouseEventHandler } from 'react';
 
 import { Text } from '../text/text';
 
 export interface NavLinkProps {
-  href: string;
+  name?: string;
+  href?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement>;
-  children?: ReactNode;
 }
 
 export function NavLink(props: NavLinkProps) {
-  const { href, children = 'Lorem ipsum', onClick } = props;
+  const { name = 'Lorem ipsum', href = '#', onClick } = props;
 
   return (
     <Text as="a" href={href} size="sm" link="true" onClick={onClick}>
-      {children}
+      {name}
     </Text>
   );
 }
