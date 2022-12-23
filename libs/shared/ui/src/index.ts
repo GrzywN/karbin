@@ -1,3 +1,4 @@
+export * from './lib/atoms/chip/chip';
 export * from './lib/atoms/button/button';
 export * from './lib/hooks/use-scroll/use-scroll';
 export * from './lib/organisms/navbar/navbar';
