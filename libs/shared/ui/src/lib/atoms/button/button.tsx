@@ -3,14 +3,16 @@ import { cva, VariantProps } from 'class-variance-authority';
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
 const buttonStyles = cva(
-  'cursor-pointer font-sans inline-flex items-center gap-2 py-2 px-4 font-medium tracking-wide',
+  `
+  cursor-pointer font-sans inline-flex items-center gap-2 py-2 px-4 font-medium tracking-wide
+  focus-within:outline outline-2 outline-offset-2`,
   {
     variants: {
       color: {
-        primary: 'bg-primary-400 text-neutral-900',
-        secondary: 'bg-secondary-400 text-neutral-900',
-        light: 'bg-white text-neutral-900',
-        dark: 'bg-neutral-800 text-white',
+        primary: 'bg-primary-400 text-neutral-900 outline-primary-400',
+        secondary: 'bg-secondary-400 text-neutral-900 outline-secondary-400',
+        light: 'bg-white text-neutral-900 outline-neutral-900',
+        dark: 'bg-neutral-800 text-white outline-white',
       },
       activeEffect: {
         opacity: 'transition-opacity hover:opacity-90 focus-visible:opacity-90',
