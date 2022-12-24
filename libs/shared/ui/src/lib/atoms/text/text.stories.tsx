@@ -41,3 +41,8 @@ export const Large = Template.bind({});
 Large.args = {
   size: 'lg',
 };
+
+export const ExtraLarge = Template.bind({});
+ExtraLarge.args = {
+  size: 'xl',
+};
