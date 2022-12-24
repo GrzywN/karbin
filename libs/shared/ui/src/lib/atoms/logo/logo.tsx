@@ -4,7 +4,7 @@ import type { OverridableComponentProps } from '../../OverridableComponentProps'
 const logoStyles = cva(['font-cursive', 'text-2xl', 'md:text-3xl'], {
   variants: {
     color: {
-      dark: 'text-neutral-800',
+      dark: 'text-neutral-900',
       light: 'text-neutral-100',
     },
   },
