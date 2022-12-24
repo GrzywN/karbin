@@ -10,12 +10,18 @@ const textStyles = cva('font-sans font-light', {
       lg: 'text-lg sm:text-2xl lg:text-3xl',
       xl: 'text-xl sm:text-3xl lg:text-4xl',
     },
+    color: {
+      white: 'text-white',
+      black: 'text-neutral-900',
+      gray: 'text-neutral-400',
+    },
     link: {
       true: 'cursor-pointer transition-colors hover:text-white focus-visible:text-white',
     },
   },
   defaultVariants: {
     size: 'md',
+    color: 'gray',
   },
 });
 
