@@ -3,15 +3,18 @@ const colors = require('tailwindcss/colors');
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
-    extend: {
-      colors: {
-        primary: colors.indigo,
-        secondary: colors.orange,
-      },
-      fontFamily: {
-        sans: 'var(--font-inter)',
-        cursive: 'var(--font-pacifico)',
-      },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      primary: colors.indigo,
+      secondary: colors.orange,
+      neutral: colors.neutral,
+    },
+    fontFamily: {
+      sans: 'var(--font-inter)',
+      cursive: 'var(--font-pacifico)',
     },
   },
   plugins: [],
