@@ -5,5 +5,6 @@ describe('shared-ui: Chip component', () => {
     cy.get('span').should('contain', 'Lorem');
     cy.get('span').should('contain', 'Ipsum');
     cy.get('span').should('contain', 'Dolor sit');
+    cy.get('span').should('contain', 'Amet consectetur');
   });
 });
