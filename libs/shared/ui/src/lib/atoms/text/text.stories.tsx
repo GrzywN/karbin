@@ -3,7 +3,7 @@ import { Text } from './text';
 
 const Story: ComponentMeta<typeof Text> = {
   component: Text,
-  title: 'Text',
+  title: 'Design System/Atoms/Text',
   args: {
     as: 'p',
   },

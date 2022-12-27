@@ -3,7 +3,7 @@ import { Navbar } from './navbar';
 
 const Story: ComponentMeta<typeof Navbar> = {
   component: Navbar,
-  title: 'Navbar',
+  title: 'Design System/Organisms/Navbar',
 };
 export default Story;
 

@@ -3,7 +3,7 @@ import { Chip } from './chip';
 
 const Story: ComponentMeta<typeof Chip> = {
   component: Chip,
-  title: 'Chip',
+  title: 'Design System/Atoms/Chip',
 };
 export default Story;
 

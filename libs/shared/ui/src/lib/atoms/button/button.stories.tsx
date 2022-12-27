@@ -3,7 +3,7 @@ import { Button } from './button';
 
 const Story: ComponentMeta<typeof Button> = {
   component: Button,
-  title: 'Button',
+  title: 'Design System/Atoms/Button',
 };
 export default Story;
 

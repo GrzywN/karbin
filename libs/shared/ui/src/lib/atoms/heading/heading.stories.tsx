@@ -3,7 +3,7 @@ import { Heading } from './heading';
 
 const Story: ComponentMeta<typeof Heading> = {
   component: Heading,
-  title: 'Heading',
+  title: 'Design System/Atoms/Heading',
 };
 export default Story;
 

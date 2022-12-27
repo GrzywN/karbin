@@ -3,7 +3,7 @@ import { NavLink } from './nav-link';
 
 const Story: ComponentMeta<typeof NavLink> = {
   component: NavLink,
-  title: 'NavLink',
+  title: 'Design System/Atoms/NavLink',
   args: {
     href: '#',
   },

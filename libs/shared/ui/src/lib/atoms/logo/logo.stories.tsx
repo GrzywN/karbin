@@ -3,7 +3,7 @@ import { Logo } from './logo';
 
 const Story: ComponentMeta<typeof Logo> = {
   component: Logo,
-  title: 'Logo',
+  title: 'Design System/Atoms/Logo',
   args: {
     as: 'h2',
   },

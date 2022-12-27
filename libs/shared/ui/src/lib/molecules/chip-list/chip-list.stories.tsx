@@ -3,7 +3,7 @@ import { ChipList } from './chip-list';
 
 const Story: ComponentMeta<typeof ChipList> = {
   component: ChipList,
-  title: 'ChipList',
+  title: 'Design System/Molecules/ChipList',
 };
 export default Story;
 
