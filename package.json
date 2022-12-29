@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@nrwl/next": "15.2.1",
+    "@tabler/icons": "^1.118.0",
     "class-variance-authority": "^0.4.0",
     "core-js": "^3.6.5",
     "hamburger-react": "^2.5.0",
