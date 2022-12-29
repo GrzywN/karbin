@@ -1,3 +1,4 @@
+export * from './lib/molecules/button-close/button-close';
 export * from './lib/molecules/chip-list/chip-list';
 export * from './lib/atoms/heading/heading';
 export * from './lib/atoms/chip/chip';
