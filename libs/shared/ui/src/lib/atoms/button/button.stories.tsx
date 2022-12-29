@@ -14,7 +14,8 @@ Default.args = {};
 
 export const Loading = Template.bind({});
 Loading.args = {
-  loading: true,
+  isLoading: true,
+  activeEffect: 'none',
 };
 
 export const Primary = Template.bind({});

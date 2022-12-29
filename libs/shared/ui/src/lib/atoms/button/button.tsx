@@ -1,43 +1,53 @@
 import { useMemo } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
+
+import { filterVariants } from '../../utils/filter-variants';
+import { LoadingSpinner } from './loading-spinner';
+
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
-const buttonStyles = cva(
-  `
-  cursor-pointer font-sans inline-flex items-center gap-2 py-2 px-4 font-medium tracking-wide
-  focus-within:outline outline-2 outline-offset-2`,
-  {
-    variants: {
-      color: {
-        primary: 'bg-primary-400 text-neutral-900 outline-primary-400',
-        secondary: 'bg-secondary-400 text-neutral-900 outline-secondary-400',
-        light: 'bg-white text-neutral-900 outline-neutral-900',
-        dark: 'bg-neutral-800 text-white outline-white',
-      },
-      activeEffect: {
-        opacity: 'transition-opacity hover:opacity-90 focus-visible:opacity-90',
-        scale: 'transition-transform hover:scale-110 focus-visible:scale-110',
-      },
-      rounded: {
-        true: 'rounded-md',
-      },
-      border: {
-        true: 'border border-2 border-black',
-      },
-      loading: {
-        true: 'relative',
-        false: 'active:translate-y-0.5',
-      },
+const buttonDefaultClasses = `
+  relative font-sans inline-flex items-center gap-2 font-medium tracking-wide
+  focus-within:outline outline-2 outline-offset-2`;
+
+const buttonVariants = {
+  variants: {
+    color: {
+      primary: 'bg-primary-400 text-neutral-900 outline-primary-400',
+      secondary: 'bg-secondary-400 text-neutral-900 outline-secondary-400',
+      light: 'bg-neutral-200 text-neutral-900 outline-neutral-900',
+      dark: 'bg-neutral-700 text-white outline-neutral-700',
     },
-    defaultVariants: {
-      color: 'primary',
-      activeEffect: 'opacity',
-      rounded: true,
-      border: true,
-      loading: false,
+    activeEffect: {
+      opacity: 'transition-opacity hover:opacity-90 focus-visible:opacity-90',
+      scale: 'transition-transform hover:scale-110 focus-visible:scale-110',
+      none: '',
     },
-  }
-);
+    isFullWidth: {
+      true: 'w-full',
+    },
+    isCircle: {
+      true: 'rounded-full',
+      false: 'rounded-md py-2 px-4',
+    },
+    isLoading: {
+      true: 'cursor-default opacity-75',
+      false: 'cursor-pointer active:translate-y-0.5',
+    },
+    hasBorder: {
+      true: 'border border-2 border-black',
+    },
+  },
+  defaultVariants: {
+    color: 'primary',
+    activeEffect: 'opacity',
+    isCircle: false,
+    isLoading: false,
+    hasBorder: true,
+  },
+};
+
+const buttonStyles = cva(buttonDefaultClasses, buttonVariants);
 
 type ComponentProps = VariantProps<typeof buttonStyles>;
 
@@ -54,52 +64,24 @@ export function Button<E extends React.ElementType = 'button'>(
   } = props;
   const Element = as;
 
-  const { loading } = passThroughProps;
+  const variantNames = Object.keys(buttonVariants.variants);
+  const { variantProps, elementProps } = filterVariants(
+    variantNames,
+    passThroughProps
+  );
 
+  const { isLoading } = passThroughProps;
   const onLoadingProps = useMemo(() => {
     return { 'aria-disabled': true, 'aria-busy': true, tabIndex: -1 };
   }, []);
 
   return (
     <Element
-      className={buttonStyles(passThroughProps)}
-      {...onLoadingProps}
-      {...passThroughProps}
+      className={buttonStyles(variantProps)}
+      {...(isLoading ? onLoadingProps : null)}
+      {...elementProps}
     >
-      {loading ? (
-        <>
-          <span className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
-            <svg
-              className="animate-spin h-5 w-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              />
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-              />
-            </svg>
-          </span>
-          <span className="sr-only" role="status">
-            Loading
-          </span>
-          <span className="invisible" aria-hidden>
-            {children}
-          </span>
-        </>
-      ) : (
-        children
-      )}
+      {isLoading ? <LoadingSpinner>{children}</LoadingSpinner> : children}
     </Element>
   );
 }
