@@ -1,5 +1,7 @@
 describe('shared-ui: ChipList component', () => {
-  beforeEach(() => cy.visit('/iframe.html?id=design-system-molecules-chiplist--default'));
+  beforeEach(() =>
+    cy.visit('/iframe.html?id=design-system-molecules-chiplist--default')
+  );
 
   it('should render the component', () => {
     cy.get('span').should('contain', 'Lorem');
