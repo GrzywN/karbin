@@ -11,8 +11,10 @@ const headingStyles = cva('font-sans font-extrabold tracking-tight', {
       xl: 'text-5xl sm:text-6xl lg:text-7xl',
     },
     color: {
-      primary: 'text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-500',
-      secondary: 'text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-secondary-500',
+      primary:
+        'text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-500',
+      secondary:
+        'text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-secondary-500',
       light: 'text-white',
       dark: 'text-neutral-900',
     },

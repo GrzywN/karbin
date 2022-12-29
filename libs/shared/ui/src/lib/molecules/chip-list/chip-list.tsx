@@ -9,7 +9,9 @@ export function ChipList(props: ChipListProps) {
     children = [
       <Chip color="primary">Lorem</Chip>,
       <Chip color="secondary">Ipsum</Chip>,
-      <Chip color="dark" background="dark">Dolor sit</Chip>,
+      <Chip color="dark" background="dark">
+        Dolor sit
+      </Chip>,
       <Chip>Amet consectetur</Chip>,
     ],
   } = props;
