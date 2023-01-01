@@ -3,7 +3,7 @@ export interface LoadingSpinnerProps {
 }
 
 export function LoadingSpinner(props: LoadingSpinnerProps) {
-  const { children = "" } = props;
+  const { children = '' } = props;
 
   return (
     <>
