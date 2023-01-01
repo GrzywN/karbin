@@ -3,6 +3,7 @@ export * from './lib/molecules/button-group/button-group';
 export * from './lib/molecules/button-close/button-close';
 export * from './lib/molecules/chip-list/chip-list';
 export * from './lib/atoms/heading/heading';
+export * from './lib/organisms/modal/modal';
 export * from './lib/atoms/chip/chip';
 export * from './lib/atoms/button/button';
 export * from './lib/hooks/use-scroll/use-scroll';
