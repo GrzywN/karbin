@@ -11,6 +11,9 @@ module.exports = {
       primary: colors.indigo,
       secondary: colors.orange,
       neutral: colors.neutral,
+      success: colors.green,
+      warning: colors.orange,
+      danger: colors.red,
     },
     fontFamily: {
       sans: 'var(--font-inter)',
