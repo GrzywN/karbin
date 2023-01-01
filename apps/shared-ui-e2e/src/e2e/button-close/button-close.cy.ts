@@ -1,7 +1,7 @@
 describe('shared-ui: ButtonClose component', () => {
   beforeEach(() =>
     cy.visit(
-      '/iframe.html?id=design-system-molecules-buttonclose--primary&args=ariaLabel;onClick;'
+      '/iframe.html?id=design-system-molecules-buttonclose--default&args=ariaLabel;onClick;'
     )
   );
 
