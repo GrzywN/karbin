@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 import { filterVariants } from '../../utils/filter-variants';
-import { LoadingSpinner } from './loading-spinner';
+import { LoadingSpinner } from '../loading-spinner/loading-spinner';
 
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
@@ -78,6 +78,7 @@ export function Button<E extends React.ElementType = 'button'>(
   return (
     <Element
       className={buttonStyles(variantProps)}
+      tabIndex={0}
       {...(isLoading ? onLoadingProps : null)}
       {...elementProps}
     >

@@ -1,9 +1,9 @@
 export interface LoadingSpinnerProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export function LoadingSpinner(props: LoadingSpinnerProps) {
-  const { children } = props;
+  const { children = "" } = props;
 
   return (
     <>
