@@ -36,6 +36,7 @@ export interface ModalProps extends VariantProps<typeof modalStyles> {
   open: boolean;
   onClose: () => void;
   children: React.ReactNode;
+  ariaLabel?: string;
   modalId: string;
   titleId: string;
   descriptionId: string;
@@ -46,6 +47,7 @@ export function Modal(props: ModalProps) {
     open,
     onClose,
     children,
+    ariaLabel = 'Modal',
     modalId,
     titleId,
     descriptionId,
@@ -94,6 +96,12 @@ export function Modal(props: ModalProps) {
 
   if (!open) return null;
 
+  if (!titleId && ariaLabel === 'Modal') {
+    console.warn(
+      'Warning!: Set a modal label by using ariaLabel prop or provide an titleId, which will refer the label.'
+    );
+  }
+
   return (
     <>
       <div
@@ -101,6 +109,7 @@ export function Modal(props: ModalProps) {
         onKeyDown={handleKeyDown}
         ref={refOuter}
         role="dialog"
+        aria-label={!titleId ? ariaLabel : null}
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
         aria-modal="true"
