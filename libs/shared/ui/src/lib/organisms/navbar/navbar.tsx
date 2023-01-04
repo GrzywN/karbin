@@ -1,10 +1,8 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
 
 import { Logo } from '../../atoms/logo/logo';
 import { NavLink } from '../../atoms/nav-link/nav-link';
-
-import { useScroll } from '../../hooks/use-scroll/use-scroll';
 
 export interface NavbarContextType {
   opened: boolean;
@@ -21,17 +19,30 @@ export function Navbar(props: NavbarProps) {
   const { children } = props;
 
   const [opened, setOpened] = useState<boolean>(false);
-  const { scrollDirection } = useScroll();
+  const [visible, setVisible] = useState<boolean>(true);
+
+  useEffect(() => {
+    let prevScrollOffset = 0;
+    let currScrollOffset = 0;
+
+    window.addEventListener('scroll', () => {
+      currScrollOffset = window.pageYOffset;
+
+      if (prevScrollOffset - currScrollOffset < 0) {
+        setVisible(false);
+      } else if (prevScrollOffset - currScrollOffset > 0) {
+        setVisible(true);
+      }
+
+      prevScrollOffset = currScrollOffset;
+    });
+  }, []);
 
   return (
     <NavbarContext.Provider value={{ opened, setOpened }}>
       <header
         className={`
-        ${
-          scrollDirection === 'down'
-            ? 'lg:opacity-100'
-            : 'lg:-translate-y-full lg:opacity-0'
-        }
+        ${visible ? 'lg:opacity-100' : 'lg:-translate-y-full lg:opacity-0'}
         fixed transition duration-500 top-0 left-1/2 -translate-x-1/2 w-full max-w-screen-xl flex items-center justify-between p-4 h-20 bg-neutral-600
         md:px-8 md:py-16 md:bg-transparent`}
       >
