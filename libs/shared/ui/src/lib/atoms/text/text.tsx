@@ -1,7 +1,7 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
-const textStyles = cva('font-sans font-light', {
+const textStyles = cva('font-sans', {
   variants: {
     size: {
       xs: 'text-xs sm:text-base lg:text-lg',
@@ -15,6 +15,17 @@ const textStyles = cva('font-sans font-light', {
       black: 'text-neutral-900',
       gray: 'text-neutral-400',
     },
+    weight: {
+      thin: 'font-thin',
+      extralight: 'font-extralight',
+      light: 'font-light',
+      normal: 'font-normal',
+      medium: 'font-medium',
+      semibold: 'font-semibold',
+      bold: 'font-bold',
+      extrabold: 'font-extrabold',
+      black: 'font-black',
+    },
     link: {
       true: 'cursor-pointer transition-colors hover:text-white focus-visible:text-white',
     },
@@ -22,6 +33,7 @@ const textStyles = cva('font-sans font-light', {
   defaultVariants: {
     size: 'md',
     color: 'gray',
+    weight: 'normal',
   },
 });
 

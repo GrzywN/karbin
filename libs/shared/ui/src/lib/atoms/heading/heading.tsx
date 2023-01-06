@@ -1,7 +1,7 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
-const headingStyles = cva('font-sans font-extrabold tracking-tight', {
+const headingStyles = cva('font-sans tracking-tight', {
   variants: {
     size: {
       xs: 'text-xl sm:text-2xl lg:text-3xl',
@@ -18,10 +18,22 @@ const headingStyles = cva('font-sans font-extrabold tracking-tight', {
       light: 'text-white',
       dark: 'text-neutral-900',
     },
+    weight: {
+      thin: 'font-thin',
+      extralight: 'font-extralight',
+      light: 'font-light',
+      normal: 'font-normal',
+      medium: 'font-medium',
+      semibold: 'font-semibold',
+      bold: 'font-bold',
+      extrabold: 'font-extrabold',
+      black: 'font-black',
+    },
   },
   defaultVariants: {
     size: 'md',
     color: 'light',
+    weight: 'extrabold',
   },
 });
 
