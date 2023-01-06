@@ -35,7 +35,7 @@ const buttonVariants = {
       false: 'cursor-pointer active:translate-y-0.5',
     },
     hasBorder: {
-      true: 'border border-2 border-black',
+      true: 'border-2 border-black',
     },
   },
   defaultVariants: {
