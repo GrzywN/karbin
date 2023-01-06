@@ -16,7 +16,7 @@ module.exports = {
       danger: colors.red,
     },
     fontFamily: {
-      sans: 'var(--font-inter)',
+      sans: 'var(--font-plus-jakarta-sans)',
       cursive: 'var(--font-pacifico)',
     },
   },
