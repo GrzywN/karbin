@@ -1,3 +1,5 @@
+export * from './lib/templates/section/section';
+export * from './lib/templates/container/container';
 export * from './lib/molecules/paper/paper';
 export * from './lib/atoms/loading-spinner/loading-spinner';
 export * from './lib/molecules/button-group/button-group';
