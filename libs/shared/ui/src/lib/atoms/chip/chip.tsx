@@ -1,7 +1,7 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
 const chipStyles = cva(
-  'font-sans rounded-full border px-3 py-1 text-xs leading-none',
+  'font-sans rounded-full border-2 px-3 py-1 font-medium text-xs leading-none',
   {
     variants: {
       color: {
