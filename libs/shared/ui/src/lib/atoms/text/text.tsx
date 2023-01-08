@@ -27,9 +27,26 @@ const textStyles = cva('font-sans', {
       black: 'font-black',
     },
     link: {
-      true: 'cursor-pointer transition-colors hover:text-white focus-visible:text-white',
+      true: 'cursor-pointer transition-colors',
     },
   },
+  compoundVariants: [
+    {
+      color: 'light',
+      link: true,
+      className: 'hover:text-neutral-300 focus-visible:text-neutral-300',
+    },
+    {
+      color: 'dark',
+      link: true,
+      className: 'hover:text-neutral-700 focus-visible:text-neutral-700',
+    },
+    {
+      color: 'gray',
+      link: true,
+      className: 'hover:text-white focus-visible:text-white',
+    },
+  ],
   defaultVariants: {
     size: 'md',
     color: 'gray',
