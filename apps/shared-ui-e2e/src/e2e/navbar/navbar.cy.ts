@@ -1,6 +1,6 @@
 describe('shared-ui: Navbar component', () => {
   beforeEach(() =>
-    cy.visit('/iframe.html?id=design-system-organisms-navbar--primary')
+    cy.visit('/iframe.html?id=design-system-organisms-navbar--default')
   );
 
   it('should render the component', () => {

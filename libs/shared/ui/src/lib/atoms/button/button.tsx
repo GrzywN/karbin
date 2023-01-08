@@ -15,6 +15,7 @@ const buttonVariants = {
     color: {
       primary: 'bg-primary-400 text-neutral-900 outline-primary-400',
       secondary: 'bg-secondary-400 text-neutral-900 outline-secondary-400',
+      tertiary: 'bg-tertiary-400 text-neutral-900 outline-tertiary-400',
       light: 'bg-neutral-200 text-neutral-900 outline-neutral-900',
       dark: 'bg-neutral-700 text-white outline-neutral-700',
     },
@@ -35,7 +36,7 @@ const buttonVariants = {
       false: 'cursor-pointer active:translate-y-0.5',
     },
     hasBorder: {
-      true: 'border border-2 border-black',
+      true: 'border-2 border-black',
     },
   },
   defaultVariants: {

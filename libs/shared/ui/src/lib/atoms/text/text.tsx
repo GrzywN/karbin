@@ -1,7 +1,7 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
-const textStyles = cva('font-sans font-light', {
+const textStyles = cva('font-sans', {
   variants: {
     size: {
       xs: 'text-xs sm:text-base lg:text-lg',
@@ -11,17 +11,46 @@ const textStyles = cva('font-sans font-light', {
       xl: 'text-xl sm:text-3xl lg:text-4xl',
     },
     color: {
-      white: 'text-white',
-      black: 'text-neutral-900',
+      light: 'text-white',
+      dark: 'text-neutral-900',
       gray: 'text-neutral-400',
     },
+    weight: {
+      thin: 'font-thin',
+      extralight: 'font-extralight',
+      light: 'font-light',
+      normal: 'font-normal',
+      medium: 'font-medium',
+      semibold: 'font-semibold',
+      bold: 'font-bold',
+      extrabold: 'font-extrabold',
+      black: 'font-black',
+    },
     link: {
-      true: 'cursor-pointer transition-colors hover:text-white focus-visible:text-white',
+      true: 'cursor-pointer transition-colors',
     },
   },
+  compoundVariants: [
+    {
+      color: 'light',
+      link: true,
+      className: 'hover:text-neutral-300 focus-visible:text-neutral-300',
+    },
+    {
+      color: 'dark',
+      link: true,
+      className: 'hover:text-neutral-700 focus-visible:text-neutral-700',
+    },
+    {
+      color: 'gray',
+      link: true,
+      className: 'hover:text-white focus-visible:text-white',
+    },
+  ],
   defaultVariants: {
     size: 'md',
     color: 'gray',
+    weight: 'normal',
   },
 });
 
