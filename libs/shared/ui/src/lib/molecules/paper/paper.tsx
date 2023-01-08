@@ -5,6 +5,7 @@ const paperStyles = cva('overflow-hidden rounded-lg shadow-lg flex flex-col', {
     color: {
       primary: 'bg-primary-400',
       secondary: 'bg-secondary-400',
+      tertiary: 'bg-tertiary-400',
       light: 'bg-neutral-100',
       dark: 'bg-neutral-900',
       success: 'bg-success-400',

@@ -7,6 +7,7 @@ const chipStyles = cva(
       color: {
         primary: 'border-primary-300',
         secondary: 'border-secondary-300',
+        tertiary: 'border-tertiary-300',
         light: 'border-black',
         dark: 'border-white',
       },

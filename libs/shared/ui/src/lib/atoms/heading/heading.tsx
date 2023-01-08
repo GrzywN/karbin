@@ -15,6 +15,9 @@ const headingStyles = cva('font-sans tracking-tight', {
         'text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-500',
       secondary:
         'text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-secondary-500',
+      tertiary:
+        'text-transparent bg-clip-text bg-gradient-to-r from-tertiary-400 to-tertiary-500',
+
       light: 'text-white',
       dark: 'text-neutral-900',
     },

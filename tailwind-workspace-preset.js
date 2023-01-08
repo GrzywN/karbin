@@ -10,6 +10,7 @@ module.exports = {
       white: colors.white,
       primary: colors.indigo,
       secondary: colors.orange,
+      tertiary: colors.teal,
       neutral: colors.neutral,
       success: colors.green,
       warning: colors.orange,
