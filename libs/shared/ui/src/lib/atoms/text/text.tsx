@@ -11,8 +11,8 @@ const textStyles = cva('font-sans', {
       xl: 'text-xl sm:text-3xl lg:text-4xl',
     },
     color: {
-      white: 'text-white',
-      black: 'text-neutral-900',
+      light: 'text-white',
+      dark: 'text-neutral-900',
       gray: 'text-neutral-400',
     },
     weight: {
