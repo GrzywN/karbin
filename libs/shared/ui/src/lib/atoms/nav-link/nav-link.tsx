@@ -15,13 +15,16 @@ export function NavLink(props: NavLinkProps) {
   const { name = 'Lorem ipsum', href = '#', onClick } = props;
 
   return (
-    <Text as="a" href={href} size="sm" link="true" onClick={onClick}>
+    <Text as="a" href={href} size="sm" link onClick={onClick}>
       {name}
     </Text>
   );
 }
 
-export type NavLinkWithNextRoutingProps = Omit<NavLinkProps, 'onClick'>;
+export type NavLinkWithNextRoutingProps = { href: string } & Omit<
+  NavLinkProps,
+  'onClick'
+>;
 
 export function NavLinkWithNextRouting(props: NavLinkWithNextRoutingProps) {
   const { href, ...passThroughProps } = props;

@@ -88,7 +88,6 @@ function Nav(props: NavProps) {
         ${opened ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 invisible'}
         grid transition-all duration-500 origin-top absolute inset-x-0 bottom-0 translate-y-full place-items-center space-y-4 py-8 px-4 bg-neutral-700
         md:static md:transform-none md:opacity-100 md:visible md:flex md:space-y-0 md:space-x-8 md:bg-transparent`}
-        aria-hidden={!opened}
       >
         {children ? (
           React.Children.map(children, (child) => (

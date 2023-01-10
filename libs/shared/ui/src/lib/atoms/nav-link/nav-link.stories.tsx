@@ -14,5 +14,5 @@ const Template: ComponentStory<typeof NavLink> = (args) => (
   <NavLink {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Default = Template.bind({});
+Default.args = {};

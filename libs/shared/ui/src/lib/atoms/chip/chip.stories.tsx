@@ -22,6 +22,11 @@ Secondary.args = {
   color: 'secondary',
 };
 
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  color: 'tertiary',
+};
+
 export const Light = Template.bind({});
 Light.args = {
   color: 'light',

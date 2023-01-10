@@ -1,7 +1,9 @@
 import { cva, VariantProps } from 'class-variance-authority';
+import { getVariantNames, filterVariants } from '../../utils/filter-variants';
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
-const textStyles = cva('font-sans font-light', {
+const textDefaultClasses = 'font-sans';
+const textVariants = {
   variants: {
     size: {
       xs: 'text-xs sm:text-base lg:text-lg',
@@ -11,19 +13,50 @@ const textStyles = cva('font-sans font-light', {
       xl: 'text-xl sm:text-3xl lg:text-4xl',
     },
     color: {
-      white: 'text-white',
-      black: 'text-neutral-900',
+      light: 'text-white',
+      dark: 'text-neutral-900',
       gray: 'text-neutral-400',
     },
+    weight: {
+      thin: 'font-thin',
+      extralight: 'font-extralight',
+      light: 'font-light',
+      normal: 'font-normal',
+      medium: 'font-medium',
+      semibold: 'font-semibold',
+      bold: 'font-bold',
+      extrabold: 'font-extrabold',
+      black: 'font-black',
+    },
     link: {
-      true: 'cursor-pointer transition-colors hover:text-white focus-visible:text-white',
+      true: 'cursor-pointer transition-colors',
     },
   },
+  compoundVariants: [
+    {
+      color: 'light' as const,
+      link: true,
+      className: 'hover:text-neutral-300 focus-visible:text-neutral-300',
+    },
+    {
+      color: 'dark' as const,
+      link: true,
+      className: 'hover:text-neutral-700 focus-visible:text-neutral-700',
+    },
+    {
+      color: 'gray' as const,
+      link: true,
+      className: 'hover:text-white focus-visible:text-white',
+    },
+  ],
   defaultVariants: {
-    size: 'md',
-    color: 'gray',
+    size: 'md' as const,
+    color: 'gray' as const,
+    weight: 'normal' as const,
   },
-});
+};
+
+const textStyles = cva(textDefaultClasses, textVariants);
 
 type ComponentProps = VariantProps<typeof textStyles>;
 
@@ -34,8 +67,14 @@ export function Text<E extends React.ElementType = 'p'>(props: TextProps<E>) {
   const { as = 'p', children = 'Lorem ipsum', ...passThroughProps } = props;
   const Element = as;
 
+  const variantNames = getVariantNames(textVariants);
+  const { variantProps, elementProps } = filterVariants(
+    variantNames,
+    passThroughProps
+  );
+
   return (
-    <Element className={textStyles(passThroughProps)} {...passThroughProps}>
+    <Element className={textStyles(variantProps)} {...elementProps}>
       {children}
     </Element>
   );
