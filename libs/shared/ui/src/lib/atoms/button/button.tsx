@@ -40,8 +40,8 @@ const buttonVariants = {
     },
   },
   defaultVariants: {
-    color: 'primary',
-    activeEffect: 'opacity',
+    color: 'primary' as const,
+    activeEffect: 'opacity' as const,
     isCircle: false,
     isLoading: false,
     hasBorder: true,
