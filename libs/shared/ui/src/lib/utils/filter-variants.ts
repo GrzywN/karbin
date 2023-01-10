@@ -11,4 +11,9 @@ export const filterVariants = <T>(variantNames: string[], allProps: T) => {
   return { variantProps, elementProps };
 };
 
-export default filterVariants;
+export interface ComponentVariants {
+  variants: { [key: string]: { [key: string]: string } };
+}
+
+export const getVariantNames = (componentVariants: ComponentVariants) =>
+  Object.keys(componentVariants.variants);

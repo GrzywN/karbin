@@ -1,3 +1,4 @@
+export * from './lib/molecules/card/card';
 export * from './lib/templates/section/section';
 export * from './lib/templates/container/container';
 export * from './lib/molecules/paper/paper';

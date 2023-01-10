@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
-import { filterVariants } from '../../utils/filter-variants';
+import { getVariantNames, filterVariants } from '../../utils/filter-variants';
 import { LoadingSpinner } from '../loading-spinner/loading-spinner';
 
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
@@ -40,8 +40,8 @@ const buttonVariants = {
     },
   },
   defaultVariants: {
-    color: 'primary',
-    activeEffect: 'opacity',
+    color: 'primary' as const,
+    activeEffect: 'opacity' as const,
     isCircle: false,
     isLoading: false,
     hasBorder: true,
@@ -65,7 +65,7 @@ export function Button<E extends React.ElementType = 'button'>(
   } = props;
   const Element = as;
 
-  const variantNames = Object.keys(buttonVariants.variants);
+  const variantNames = getVariantNames(buttonVariants);
   const { variantProps, elementProps } = filterVariants(
     variantNames,
     passThroughProps

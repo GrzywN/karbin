@@ -6,7 +6,7 @@ export function Container(props: ContainerProps) {
   const { children } = props;
 
   return (
-    <main className="max-w-7xl mx-auto py-28 px-8 grid gap-8">{children}</main>
+    <main className="max-w-7xl mx-auto py-28 px-8 grid gap-12">{children}</main>
   );
 }
 
