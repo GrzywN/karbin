@@ -1,4 +1,5 @@
 export * from './lib/molecules/email-and-resume-box/email-and-resume-box';
+export * from './lib/organisms/footer/footer';
 export * from './lib/molecules/card/card';
 export * from './lib/templates/section/section';
 export * from './lib/templates/container/container';
