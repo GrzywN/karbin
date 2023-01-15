@@ -8,7 +8,7 @@ import type { OverridableComponentProps } from '../../OverridableComponentProps'
 
 const buttonDefaultClasses = `
   relative font-sans inline-flex items-center gap-2 font-medium tracking-wide
-  focus-within:outline outline-2 outline-offset-2`;
+  focus-within:outline outline-2 outline-offset-2 break-all`;
 
 const buttonVariants = {
   variants: {
