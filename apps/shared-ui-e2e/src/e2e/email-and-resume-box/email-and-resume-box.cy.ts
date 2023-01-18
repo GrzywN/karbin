@@ -7,6 +7,6 @@ describe('shared-ui: EmailAndResumeBox component', () => {
 
   it('should render the component', () => {
     cy.get('a[href^="mailto:"').should('be.visible');
-    cy.get('a[download]').should('be.visible');
+    cy.get('a[type="application/pdf"]').should('be.visible');
   });
 });
