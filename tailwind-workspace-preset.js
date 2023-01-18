@@ -21,5 +21,5 @@ module.exports = {
       cursive: 'var(--font-pacifico)',
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
