@@ -1,4 +1,5 @@
 export * from './lib/molecules/article-details/article-details';
+export * from './lib/molecules/article-header/article-header';
 export * from './lib/atoms/avatar/avatar';
 export * from './lib/molecules/email-and-resume-box/email-and-resume-box';
 export * from './lib/organisms/footer/footer';
