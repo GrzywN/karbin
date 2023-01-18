@@ -1,3 +1,4 @@
+export * from './lib/atoms/avatar/avatar';
 export * from './lib/molecules/email-and-resume-box/email-and-resume-box';
 export * from './lib/organisms/footer/footer';
 export * from './lib/molecules/card/card';
