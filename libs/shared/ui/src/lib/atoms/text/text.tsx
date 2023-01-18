@@ -2,7 +2,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { getVariantNames, filterVariants } from '../../utils/filter-variants';
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
-const textDefaultClasses = 'font-sans';
+const textDefaultClasses = 'font-sans not-italic';
 const textVariants = {
   variants: {
     size: {

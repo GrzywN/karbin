@@ -22,7 +22,13 @@ export function EmailAndResumeBox(props: EmailAndResumeBoxProps) {
           {email}
         </Text>
       </Button>
-      <Text as="a" href={`/${resumeFileName}`} download color="dark" link>
+      <Text
+        as="a"
+        href={`/${resumeFileName}`}
+        type="application/pdf"
+        color="dark"
+        link
+      >
         <span className="inline-flex items-center gap-2 underline">
           <IconFile color="black" /> {resumeFileName}
         </span>
