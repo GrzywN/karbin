@@ -1,5 +1,7 @@
 describe('shared-ui: ArticleHeader component', () => {
-  beforeEach(() => cy.visit('/iframe.html?id=design-system-molecules-articleheader--default'));
+  beforeEach(() =>
+    cy.visit('/iframe.html?id=design-system-molecules-articleheader--default')
+  );
 
   it('should render the component', () => {
     cy.get('header').should('be.visible');

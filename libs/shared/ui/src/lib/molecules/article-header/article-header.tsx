@@ -15,7 +15,7 @@ export function ArticleHeader(props: ArticleHeaderProps) {
     authorName = 'Jane Doe',
     date = '2000-01-01T00:00:00.000Z',
     minutesRead = 10,
-    tags = ["Lorem", "Ipsum", "Dolor sit"],
+    tags = ['Lorem', 'Ipsum', 'Dolor sit'],
   } = props;
 
   return (
@@ -28,7 +28,7 @@ export function ArticleHeader(props: ArticleHeaderProps) {
       />
       <ChipList>
         {tags.map((tag: string, index: number) => (
-          <ChipList.Chip key={index} color="dark" >
+          <ChipList.Chip key={index} color="dark">
             {tag}
           </ChipList.Chip>
         ))}
