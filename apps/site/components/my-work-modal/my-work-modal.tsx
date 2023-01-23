@@ -46,8 +46,9 @@ export function MyWorkModal(props: MyWorkModalProps) {
 
   const [opened, setOpened] = useState<boolean>(false);
 
-  const titleId = `${id}-title`;
-  const descriptionId = `${id}-description`;
+  const myWorkModalIdPrefix = "MyWorkModal__";
+  const titleId = `${myWorkModalIdPrefix}${id}-title`;
+  const descriptionId = `${myWorkModalIdPrefix}${id}-description`;
 
   const handleClose = () => {
     setOpened(false);
@@ -61,7 +62,7 @@ export function MyWorkModal(props: MyWorkModalProps) {
       <Modal
         open={opened}
         onClose={handleClose}
-        modalId={id}
+        modalId={`${myWorkModalIdPrefix}${id}`}
         titleId={titleId}
         descriptionId={descriptionId}
       >
