@@ -30,7 +30,7 @@ export function AllArticlesSection(props: AllArticlesSectionProps) {
       <Heading as="h1" size="xl">
         All articles
       </Heading>
-      <BlogPostList posts={[]} />
+      <BlogPostList posts={posts} />
     </Section>
   );
 }
