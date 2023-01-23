@@ -7,6 +7,9 @@ const logoStyles = cva(['font-cursive', 'text-2xl', 'md:text-3xl'], {
       dark: 'text-neutral-900',
       light: 'text-neutral-100',
     },
+    link: {
+      true: 'cursor-pointer transition-colors hover:text-primary-200 focus-visible:text-primary-200',
+    },
   },
   defaultVariants: {
     color: 'light',

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
   IconMail,
   IconBrandTwitter,
@@ -26,7 +27,9 @@ export function Layout(props: LayoutProps) {
   return (
     <>
       <Navbar>
-        <Logo />
+        <Link href="/">
+          <Logo link />
+        </Link>
         <Navbar.Nav>
           <NavLinkWithNextRouting href="/about" name="About" />
           <NavLinkWithNextRouting href="/work" name="Work" />
