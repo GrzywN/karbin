@@ -43,8 +43,8 @@ export function Navbar(props: NavbarProps) {
       <header
         className={`
         ${visible ? 'lg:opacity-100' : 'lg:-translate-y-full lg:opacity-0'}
-        fixed transition duration-500 top-0 left-1/2 -translate-x-1/2 w-full max-w-screen-xl flex items-center justify-between p-4 h-20 bg-neutral-600
-        md:px-8 md:py-16 md:bg-transparent`}
+        z-50 fixed transition duration-500 top-0 left-1/2 -translate-x-1/2 w-full max-w-screen-xl flex items-center justify-between p-4 h-20 bg-neutral-600
+        lg:px-8 lg:py-16 lg:bg-transparent`}
       >
         {children ? (
           children
@@ -71,7 +71,7 @@ function Nav(props: NavProps) {
 
   return (
     <nav className="flex items-center">
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Hamburger
           toggled={opened}
           toggle={setOpened}
@@ -87,7 +87,7 @@ function Nav(props: NavProps) {
         className={`
         ${opened ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 invisible'}
         grid transition-all duration-500 origin-top absolute inset-x-0 bottom-0 translate-y-full place-items-center space-y-4 py-8 px-4 bg-neutral-700
-        md:static md:transform-none md:opacity-100 md:visible md:flex md:space-y-0 md:space-x-8 md:bg-transparent`}
+        lg:static lg:transform-none lg:opacity-100 lg:visible lg:flex lg:space-y-0 lg:space-x-8 lg:bg-transparent`}
       >
         {children ? (
           React.Children.map(children, (child) => (
