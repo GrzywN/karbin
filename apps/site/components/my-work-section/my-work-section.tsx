@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import { Section, Heading, Card, Text, Button } from '@karbin/shared/ui';
-import { IconArrowRight } from '@tabler/icons';
+import { Section, Heading, Card, Text } from '@karbin/shared/ui';
+
+import MyWorkModal from '../my-work-modal/my-work-modal';
 
 import type { StaticImageData } from 'next/image';
 
@@ -10,8 +11,15 @@ export interface CardData {
   imagePriority?: boolean;
   textHeading: string | React.ReactNode;
   textParagraph: string | React.ReactNode;
-  textButton: string | React.ReactNode;
-  buttonHref: string;
+  textButton: string;
+  modalImageSrc: StaticImageData;
+  modalImageAlt: string;
+  modalTitle: string;
+  modalDescription: string;
+  modalTags: string[];
+  modalLinkCaseStudy?: string;
+  modalLinkPreview: string;
+  modalLinkSource: string;
 }
 
 export interface MyWorkSectionProps {
@@ -25,7 +33,7 @@ export function MyWorkSection(props: MyWorkSectionProps) {
 
   return (
     <Section title={sectionTitle}>
-      <Heading as="h2" size="xl">
+      <Heading as="h1" size="xl">
         {heading}
       </Heading>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -38,7 +46,14 @@ export function MyWorkSection(props: MyWorkSectionProps) {
               textHeading,
               textParagraph,
               textButton,
-              buttonHref,
+              modalImageSrc,
+              modalImageAlt,
+              modalTitle,
+              modalDescription,
+              modalTags,
+              modalLinkCaseStudy,
+              modalLinkPreview,
+              modalLinkSource,
             },
             index
           ) => (
@@ -52,9 +67,18 @@ export function MyWorkSection(props: MyWorkSectionProps) {
                   {textParagraph}
                 </Text>
                 <hr className="mt-auto" />
-                <Button as="a" href={buttonHref} color="secondary">
-                  {textButton} <IconArrowRight color="black" />
-                </Button>
+                <MyWorkModal
+                  id={index.toString()}
+                  textButton={textButton}
+                  imageSrc={modalImageSrc}
+                  imageAlt={modalImageAlt}
+                  title={modalTitle}
+                  description={modalDescription}
+                  chips={modalTags}
+                  linkCaseStudy={modalLinkCaseStudy}
+                  linkPreview={modalLinkPreview}
+                  linkSource={modalLinkSource}
+                />
               </Card.Body>
             </Card>
           )
