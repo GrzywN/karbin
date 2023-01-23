@@ -7,6 +7,7 @@ import {
 import {
   Navbar,
   Logo,
+  NavLink,
   NavLinkWithNextRouting,
   Button,
   Footer,
@@ -27,10 +28,15 @@ export function Layout(props: LayoutProps) {
       <Navbar>
         <Logo />
         <Navbar.Nav>
-          <NavLinkWithNextRouting href="/" name="Work" />
-          <NavLinkWithNextRouting href="/" name="About me" />
-          <NavLinkWithNextRouting href="/" name="Resume" />
-          <Button color="tertiary">
+          <NavLinkWithNextRouting href="/about" name="About" />
+          <NavLinkWithNextRouting href="/work" name="Work" />
+          <NavLinkWithNextRouting href="/articles" name="Articles" />
+          <NavLink href="/Resume-Karol-Binkowski.pdf" name="Resume" />
+          <Button
+            as="a"
+            href="mailto:karolbinkowski3@proton.me"
+            color="tertiary"
+          >
             Contact me
             <IconMail />
           </Button>
@@ -42,13 +48,22 @@ export function Layout(props: LayoutProps) {
           © {new Date().getFullYear()} Karol Binkowski. All Rights Reserved.
         </Text>
         <Footer.SocialLinks>
-          <Footer.SocialLink href="#" title="Twitter page">
+          <Footer.SocialLink
+            href="https://twitter.com/grzywn"
+            title="Twitter page"
+          >
             <IconBrandTwitter />
           </Footer.SocialLink>
-          <Footer.SocialLink href="#" title="GitHub account">
+          <Footer.SocialLink
+            href="https://github.com/GrzywN"
+            title="GitHub account"
+          >
             <IconBrandGithub />
           </Footer.SocialLink>
-          <Footer.SocialLink href="#" title="LinkedIn account">
+          <Footer.SocialLink
+            href="https://www.linkedin.com/in/karol-binkowski-113a13211/"
+            title="LinkedIn account"
+          >
             <IconBrandLinkedin />
           </Footer.SocialLink>
         </Footer.SocialLinks>

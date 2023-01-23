@@ -1,3 +1,9 @@
 @tailwind components;
 @tailwind base;
 @tailwind utilities;
+
+@layer base {
+  pre {
+    @apply whitespace-pre-wrap !p-0 border-4 border-neutral-500;
+  }
+}

@@ -1,0 +1,49 @@
+---
+title: Creating Polymorphic React Components with TypeScript Generics
+excerpt: In React, creating reusable components is a must for efficient and maintainable code. One way to achieve this is by using polymorphic components, also known as "Render Props" or "Component Props". These are components that can render different elements based on a prop passed to them. While there are different ways to create polymorphic components, one way to achieve type safety when using TypeScript is by using generics. Generics allow you to create a component that can be used to render any valid React element, and the type checker will ensure that the props passed to the component are valid for the element being rendered. This allows you to create a single component that can be used to render different elements, making your code more reusable and maintainable, and the type checker will help you identify issues in the code when you're trying to pass a prop that is not valid for the element that the component is going to render.
+date: '2023-01-16T09:52:29.519Z'
+author:
+  name: Karol Binkowski
+tags: ['React', 'TypeScript', 'Design System']
+---
+
+# Creating Polymorphic React Components with TypeScript Generics
+
+In React, creating reusable components is a must for efficient and maintainable code. One way to achieve this is by using polymorphic components, also known as "Render Props" or "Component Props". These are components that can render different elements based on a prop passed to them.
+
+While there are different ways to create polymorphic components, one way to achieve type safety when using TypeScript is by using generics. Generics allow you to create a component that can be used to render any valid React element, and the type checker will ensure that the props passed to the component are valid for the element being rendered.
+
+Here's an example of how you could create a generic component that takes a type parameter `Elem` and use it to ensure type safety:
+
+```tsx
+import React from 'react';
+
+interface Props<Elem extends keyof JSX.IntrinsicElements> {
+  as: Elem;
+  children: React.ReactNode;
+  [key: string]: any;
+}
+
+const Button = <Elem extends keyof JSX.IntrinsicElements>({
+  as,
+  children,
+  ...rest
+}: Props<Elem>) => {
+  return React.createElement(as, { ...rest }, children);
+};
+```
+
+Here, the component takes a type parameter `Elem` which can be any valid React element, and the component's props are defined as a type that extends `keyof JSX.IntrinsicElements`, which is a type that represents all the standard HTML and SVG elements in React. This way the type checker will ensure that the `as` prop is a valid React element.
+
+Then the component destructures the props and spreads it to `createElement` method. This way the component gets all the props passed to it and it's guaranteed that the passed props are valid for the element provided by the `as` prop.
+
+You can then use this component like this:
+
+```tsx
+<Button as="button">Click me</Button>
+<Button as="a" href="#">Go somewhere</Button>
+```
+
+This allows you to create a single component that can be used to render different elements, making your code more reusable and maintainable, and the type checker will help you identify issues in the code when you're trying to pass a prop that is not valid for the element that the component is going to render.
+
+In conclusion, by using generics, you can create polymorphic React components that are reusable, maintainable, and type-safe. This is a great solution for when you want to create a component that can render different elements and ensure that the props passed to the component are valid for the element being rendered.

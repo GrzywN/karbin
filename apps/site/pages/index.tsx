@@ -62,13 +62,13 @@ export function Index() {
         }
         posts={[
           {
-            title: 'Why Vim might be a better choice than famous VS Code.',
+            title: 'Why Vim might be a better choice than famous VS Code',
             whenPublished: '1 month ago',
             tags: ['Vim', 'Linux', 'Productivity'],
           },
           {
             title:
-              'Using "as" prop to create polymorphic React components (with TypeScript)',
+              'Creating Polymorphic React Components with TypeScript Generics',
             whenPublished: '2 months ago',
             tags: ['React', 'TypeScript', 'Design System'],
           },
