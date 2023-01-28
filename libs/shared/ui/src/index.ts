@@ -1,3 +1,4 @@
+export * from './lib/molecules/category-list-box/category-list-box';
 export * from './lib/atoms/separator/separator';
 export * from './lib/molecules/article-details/article-details';
 export * from './lib/organisms/article/article';
