@@ -11,17 +11,17 @@ describe('Chip', () => {
   });
 
   it('should render successfully with a text passed as a child', () => {
-    const CHIP_TEXT = 'Chip text';
-    const { baseElement } = render(<Chip>{CHIP_TEXT}</Chip>);
+    const text = 'Text';
+    const { baseElement } = render(<Chip>{text}</Chip>);
 
-    expect(baseElement).toHaveTextContent(CHIP_TEXT);
+    expect(baseElement).toHaveTextContent(text);
   });
 
   it('should render successfully with a ReactNode passed as a child', () => {
-    const CHIP_TEXT = 'Chip text maybe with an icon.';
-    const CHIP_NODE = <span>{CHIP_TEXT}</span>;
-    const { baseElement } = render(<Chip>{CHIP_NODE}</Chip>);
+    const text = 'Text';
+    const node = <p>{text}</p>;
+    const { baseElement } = render(<Chip>{node}</Chip>);
 
-    expect(baseElement).toHaveTextContent(CHIP_TEXT);
+    expect(baseElement).toHaveTextContent(text);
   });
 });

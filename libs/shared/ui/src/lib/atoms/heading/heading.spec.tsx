@@ -10,17 +10,17 @@ describe('Heading', () => {
   });
 
   it('should render successfully with a text passed as a child', () => {
-    const HEADING_TEXT = 'Heading text';
-    const { baseElement } = render(<Heading>{HEADING_TEXT}</Heading>);
+    const text = 'Text';
+    const { baseElement } = render(<Heading>{text}</Heading>);
 
-    expect(baseElement).toHaveTextContent(HEADING_TEXT);
+    expect(baseElement).toHaveTextContent(text);
   });
 
   it('should render successfully with a ReactNode passed as a child', () => {
-    const HEADING_TEXT = 'Heading text';
-    const HEADING_NODE = <span>{HEADING_TEXT}</span>;
-    const { baseElement } = render(<Heading>{HEADING_NODE}</Heading>);
+    const text = 'Text';
+    const node = <p>{text}</p>;
+    const { baseElement } = render(<Heading>{node}</Heading>);
 
-    expect(baseElement).toHaveTextContent(HEADING_TEXT);
+    expect(baseElement).toHaveTextContent(text);
   });
 });

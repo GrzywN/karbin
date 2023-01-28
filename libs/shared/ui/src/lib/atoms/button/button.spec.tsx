@@ -11,18 +11,18 @@ describe('Button', () => {
   });
 
   it('should render successfully with a text passed as a child', () => {
-    const BUTTON_TEXT = 'Button text';
-    const { baseElement } = render(<Button>{BUTTON_TEXT}</Button>);
+    const text = 'Text';
+    const { baseElement } = render(<Button>{text}</Button>);
 
-    expect(baseElement).toHaveTextContent(BUTTON_TEXT);
+    expect(baseElement).toHaveTextContent(text);
   });
 
   it('should render successfully with a ReactNode passed as a child', () => {
-    const BUTTON_TEXT = 'Button text with some kind of icon';
-    const BUTTON_NODE = <p>{BUTTON_TEXT}</p>;
-    const { baseElement } = render(<Button>{BUTTON_NODE}</Button>);
+    const text = 'Text';
+    const node = <p>{text}</p>;
+    const { baseElement } = render(<Button>{node}</Button>);
 
-    expect(baseElement).toHaveTextContent(BUTTON_TEXT);
+    expect(baseElement).toHaveTextContent(text);
   });
 
   it('should be disabled when is loading', () => {
@@ -38,11 +38,11 @@ describe('Button', () => {
   });
 
   it('should trigger an onClick event when clicked', () => {
-    const BUTTON_TEXT = 'Button text';
+    const TEXT = 'Button text';
     const handleClick = jest.fn();
-    render(<Button onClick={handleClick}>{BUTTON_TEXT}</Button>);
+    render(<Button onClick={handleClick}>{TEXT}</Button>);
 
-    fireEvent.click(screen.getByText(BUTTON_TEXT));
+    fireEvent.click(screen.getByText(TEXT));
 
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
