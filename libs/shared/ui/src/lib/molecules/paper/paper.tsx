@@ -9,8 +9,8 @@ const paperStyles = cva('overflow-hidden rounded-lg shadow-lg', {
       light: 'bg-neutral-100 text-neutral-900',
       dark: 'bg-neutral-900 text-white',
       success: 'bg-success-400 text-neutral-900',
-      danger: 'bg-danger-400 text-neutral-900',
       warning: 'bg-warning-400 text-neutral-900',
+      danger: 'bg-danger-400 text-neutral-900',
     },
     hasBorder: {
       true: 'border-2 border-r-4 border-b-4 border-black',
