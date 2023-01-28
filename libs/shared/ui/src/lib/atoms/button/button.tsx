@@ -73,13 +73,12 @@ export function Button<E extends React.ElementType = 'button'>(
 
   const { isLoading } = passThroughProps;
   const onLoadingProps = useMemo(() => {
-    return { 'aria-disabled': true, 'aria-busy': true, tabIndex: -1 };
+    return { disabled: true, 'aria-busy': true };
   }, []);
 
   return (
     <Element
       className={buttonStyles(variantProps)}
-      tabIndex={0}
       {...(isLoading ? onLoadingProps : null)}
       {...elementProps}
     >
