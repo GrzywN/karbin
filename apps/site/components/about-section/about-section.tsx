@@ -16,7 +16,7 @@ export function AboutSection(props: AboutSectionProps) {
     <>
       <Section title={sectionTitle}>
         <figure className="mt-16 flex gap-4 justify-between">
-          <Heading as="h1" size="xl">
+          <Heading as="h1" size="xl" color="light">
             {heading}
           </Heading>
           <span className="shrink-0 lg:hidden">

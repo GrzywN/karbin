@@ -33,7 +33,7 @@ export function MyWorkSection(props: MyWorkSectionProps) {
 
   return (
     <Section title={sectionTitle}>
-      <Heading as="h1" size="xl">
+      <Heading as="h1" size="xl" color="light">
         {heading}
       </Heading>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">

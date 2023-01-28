@@ -15,7 +15,7 @@ export function BlogPostsSection(props: BlogPostsSectionProps) {
 
   return (
     <Section title={sectionTitle}>
-      <Heading as="h2" size="lg">
+      <Heading as="h2" size="lg" color="light">
         {heading}
       </Heading>
       <BlogPostList posts={posts} />

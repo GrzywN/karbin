@@ -1,6 +1,6 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
-const separatorStyles = cva('border-2 border-neutral-600', {
+const separatorStyles = cva('border-2 border-current opacity-25', {
   variants: {
     size: {
       xs: 'w-1/5',

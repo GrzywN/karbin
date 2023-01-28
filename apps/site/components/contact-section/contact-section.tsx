@@ -12,7 +12,7 @@ export function ContactSection(props: ContactSectionProps) {
 
   return (
     <Section title={sectionTitle}>
-      <Heading as="h2" size="xl">
+      <Heading as="h2" size="xl" color="light">
         {heading}
       </Heading>
       <EmailAndResumeBox email={email} resumeFileName={resumeFileName} />
