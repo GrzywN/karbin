@@ -10,14 +10,14 @@ describe('Button', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should render successfully with a text passed as a children', () => {
+  it('should render successfully with a text passed as a child', () => {
     const BUTTON_TEXT = 'Button text';
     const { baseElement } = render(<Button>{BUTTON_TEXT}</Button>);
 
     expect(baseElement).toHaveTextContent(BUTTON_TEXT);
   });
 
-  it('should render successfully with a ReactNode passed as a children', () => {
+  it('should render successfully with a ReactNode passed as a child', () => {
     const BUTTON_TEXT = 'Button text with some kind of icon';
     const BUTTON_NODE = <p>{BUTTON_TEXT}</p>;
     const { baseElement } = render(<Button>{BUTTON_NODE}</Button>);
