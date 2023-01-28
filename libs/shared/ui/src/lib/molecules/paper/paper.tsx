@@ -1,6 +1,6 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
-const paperStyles = cva('overflow-hidden rounded-lg shadow-lg flex flex-col', {
+const paperStyles = cva('overflow-hidden rounded-lg shadow-lg', {
   variants: {
     color: {
       primary: 'bg-primary-400',
