@@ -1,11 +1,9 @@
 import AboutSection from '../../components/about-section/about-section';
+import MyToolsSection from '../../components/my-tools-section/my-tools-section';
 
 import imageKarolBinkowski from '../../public/images/avatars/KarolBinkowski.png';
 
-/* eslint-disable-next-line */
-export interface AboutPageProps {}
-
-export function AboutPage(props: AboutPageProps) {
+export function AboutPage() {
   return (
     <>
       <AboutSection
@@ -31,6 +29,77 @@ export function AboutPage(props: AboutPageProps) {
         ]}
         imageSrc={imageKarolBinkowski}
         imageAlt="Karol Binkowski"
+      />
+      <MyToolsSection
+        sectionTitle="My tools"
+        heading="My tools"
+        categories={[
+          {
+            heading: 'Frontend',
+            list: [
+              <>
+                <abbr title="HyperText Markup Language">HTML</abbr> and{' '}
+                <abbr title="Cascading Style Sheets">CSS</abbr>
+              </>,
+              'JavaScript',
+              'Next.js',
+              'React',
+              'Tailwind CSS',
+              'TypeScript',
+            ],
+          },
+          {
+            heading: 'Design',
+            list: [
+              'Design Systems',
+              'Figma',
+              'Responsive Web Design',
+              'Storybook',
+              <>
+                <abbr title="Web Content Accessibility Guidelines">WCAG</abbr>
+              </>,
+            ],
+          },
+          {
+            heading: 'Approaches',
+            list: [
+              'Atomic Design',
+              <>
+                <abbr title="Block Element Modifier">BEM</abbr>
+              </>,
+              'Design Patterns',
+              'Test-driven development',
+              <>
+                <abbr title="Web Content Accessibility Guidelines">WCAG</abbr>
+              </>,
+            ],
+          },
+          {
+            heading: 'Testing',
+            list: [
+              'Cypress',
+              'Jest',
+              'React Testing Library',
+              'Test-driven development',
+              'Vitest',
+            ],
+          },
+          {
+            heading: 'Integrations',
+            list: [
+              'Google Analytics',
+              'Google Maps',
+              <>
+                Headless <abbr title="Content Management System">CMS</abbr>
+              </>,
+              'Open Street Maps',
+            ],
+          },
+          {
+            heading: 'Workflow',
+            list: ['Figma', 'GIMP', 'Git', 'Linux', 'Nx workspaces', 'Vim'],
+          },
+        ]}
       />
     </>
   );
