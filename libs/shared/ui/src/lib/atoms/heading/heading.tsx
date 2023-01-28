@@ -11,6 +11,7 @@ const headingStyles = cva('font-sans tracking-tight', {
       xl: 'text-5xl sm:text-6xl lg:text-7xl',
     },
     color: {
+      current: 'text-current',
       primary:
         'text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-500',
       secondary:
@@ -35,7 +36,7 @@ const headingStyles = cva('font-sans tracking-tight', {
   },
   defaultVariants: {
     size: 'md',
-    color: 'light',
+    color: 'current',
     weight: 'extrabold',
   },
 });

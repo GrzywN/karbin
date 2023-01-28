@@ -15,7 +15,7 @@ export function EmailAndResumeBox(props: EmailAndResumeBoxProps) {
   } = props;
 
   return (
-    <Paper classes="p-4 gap-4 max-w-md">
+    <Paper classes="p-4 grid gap-4 max-w-md">
       <Button as="a" href={`mailto:${email}`} color="primary">
         <IconMail />
         <Text color="dark" size="xs">

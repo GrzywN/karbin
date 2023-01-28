@@ -15,7 +15,7 @@ export function NavLink(props: NavLinkProps) {
   const { name = 'Lorem ipsum', href = '#', onClick } = props;
 
   return (
-    <Text as="a" href={href} size="sm" link onClick={onClick}>
+    <Text as="a" href={href} size="sm" color="gray" link onClick={onClick}>
       {name}
     </Text>
   );

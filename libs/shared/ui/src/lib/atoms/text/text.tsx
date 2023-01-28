@@ -13,6 +13,7 @@ const textVariants = {
       xl: 'text-xl sm:text-3xl lg:text-4xl',
     },
     color: {
+      current: 'text-current',
       light: 'text-white',
       dark: 'text-neutral-900',
       gray: 'text-neutral-400',
@@ -51,7 +52,7 @@ const textVariants = {
   ],
   defaultVariants: {
     size: 'md' as const,
-    color: 'gray' as const,
+    color: 'current' as const,
     weight: 'normal' as const,
   },
 };

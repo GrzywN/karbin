@@ -27,7 +27,7 @@ export function AllArticlesSection(props: AllArticlesSectionProps) {
 
   return (
     <Section title={sectionTitle}>
-      <Heading as="h1" size="xl">
+      <Heading as="h1" size="xl" color="light">
         All articles
       </Heading>
       <BlogPostList posts={posts} />
