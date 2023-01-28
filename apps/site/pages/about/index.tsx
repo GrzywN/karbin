@@ -11,9 +11,9 @@ export function AboutPage() {
         heading="About me"
         paragraphs={[
           <>
-            I&apos;m a <strong>Junior Front-end developer</strong> strongly
-            focused on <strong>React/React Native</strong> apps development, but
-            I can adapt to whatever tools are required.
+            Hello 👋I&apos;m a <strong>Junior Front-end developer</strong>{' '}
+            strongly focused on <strong>React/React Native</strong> apps
+            development, but I can adapt to whatever tools are required.
           </>,
           <>
             I currently have several commercial projects under my belt and have
