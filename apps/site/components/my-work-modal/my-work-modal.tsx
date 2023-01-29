@@ -46,7 +46,7 @@ export function MyWorkModal(props: MyWorkModalProps) {
 
   const [opened, setOpened] = useState<boolean>(false);
 
-  const myWorkModalIdPrefix = "MyWorkModal__";
+  const myWorkModalIdPrefix = 'MyWorkModal__';
   const titleId = `${myWorkModalIdPrefix}${id}-title`;
   const descriptionId = `${myWorkModalIdPrefix}${id}-description`;
 
