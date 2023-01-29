@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, createRef } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 import ButtonClose from '../../molecules/button-close/button-close';
@@ -32,14 +32,27 @@ const modalStyles = cva(
   }
 );
 
-export interface ModalProps extends VariantProps<typeof modalStyles> {
+export interface ModalProps
+  extends VariantProps<typeof modalStyles>,
+    ModalWithAriaProps {
   open: boolean;
   onClose: () => void;
   children: React.ReactNode;
-  ariaLabel?: string;
   modalId: string;
-  titleId: string;
   descriptionId: string;
+}
+
+type ModalWithAriaProps = ModalWithAriaLabelProps &
+  ModalWithAriaLabelledByProps;
+
+interface ModalWithAriaLabelProps {
+  ariaLabel: string;
+  titleId: never;
+}
+
+interface ModalWithAriaLabelledByProps {
+  ariaLabel: never;
+  titleId: string;
 }
 
 export function Modal(props: ModalProps) {
@@ -47,73 +60,86 @@ export function Modal(props: ModalProps) {
     open,
     onClose,
     children,
-    ariaLabel = 'Modal',
+    ariaLabel,
     modalId,
     titleId,
     descriptionId,
     ...passThroughProps
   } = props;
 
-  const refOuter = useRef<HTMLDivElement | null>(null);
-  const refFirstFocusable = useRef<HTMLElement | null>(null);
-  const refLastFocusable = useRef<HTMLElement | null>(null);
+  const modalRef = createRef<HTMLDivElement>();
+
+  const handleMount = () => {
+    if (!open || modalRef.current == null) return;
+
+    const firstFocusableModalElement = modalRef.current.querySelector(
+      'a[href], button, input, textarea, select, details,[tabindex]:not([tabindex="-1"])'
+    ) as HTMLElement;
+
+    firstFocusableModalElement.focus();
+  };
+
+  const handleTabKey = (e: KeyboardEvent) => {
+    if (!open || modalRef.current == null) return;
+
+    const focusableModalElements = Array.from<HTMLElement>(
+      modalRef.current.querySelectorAll(
+        'a, button, input, textarea, select, details, iframe, embed, object, summary dialog, audio[controls], video[controls], [contenteditable], [tabindex]'
+      )
+    ).filter((el) => {
+      return !el.hasAttribute('disabled') && !el.hasAttribute('hidden');
+    });
+
+    const firstElement = focusableModalElements[0] as HTMLElement;
+    const lastElement = focusableModalElements[
+      focusableModalElements.length - 1
+    ] as HTMLElement;
+
+    if (e.shiftKey && document.activeElement === firstElement) {
+      lastElement.focus();
+      e.preventDefault();
+    }
+
+    if (!e.shiftKey && document.activeElement === lastElement) {
+      firstElement.focus();
+      e.preventDefault();
+    }
+  };
 
   useEffect(() => {
-    const focusableElements = Array.from<HTMLElement>(
-      refOuter.current?.querySelectorAll('[tabindex]') ?? []
-    );
+    const lastFocusBeforeRendering = document.activeElement as HTMLElement;
+    handleMount();
 
-    refFirstFocusable.current = focusableElements[0];
-    refLastFocusable.current = focusableElements[focusableElements.length - 1];
+    function keyListener(e: KeyboardEvent) {
+      const listener = keyListeners.get(e.key);
+      return listener && listener(e);
+    }
+    document.addEventListener('keydown', keyListener);
 
-    refFirstFocusable.current?.focus();
-  }, []);
+    return () => {
+      document.removeEventListener('keydown', keyListener);
+      lastFocusBeforeRendering.focus();
+    };
+  });
 
-  const handleKeyDown = useCallback(
-    (e: React.KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose();
-        return;
-      }
-
-      if (e.key !== 'Tab') return;
-
-      if (document.activeElement === refLastFocusable.current && !e.shiftKey) {
-        e.preventDefault();
-        refFirstFocusable.current?.focus();
-      } else if (
-        document.activeElement === refFirstFocusable.current &&
-        e.shiftKey
-      ) {
-        e.preventDefault();
-        refLastFocusable.current?.focus();
-      }
-    },
-    [onClose]
-  );
-
-  const handleBackdropClick = useCallback(onClose, [onClose]);
+  const keyListeners = new Map([
+    ['Escape', onClose],
+    ['Tab', handleTabKey],
+  ]);
 
   if (!open) return null;
-
-  if (!titleId && ariaLabel === 'Modal') {
-    console.warn(
-      'Warning!: Set a modal label by using ariaLabel prop or provide an titleId, which will refer the label.'
-    );
-  }
 
   return (
     <>
       <div
         className={modalStyles(passThroughProps)}
-        onKeyDown={handleKeyDown}
-        ref={refOuter}
+        ref={modalRef}
         role="dialog"
-        aria-label={!titleId ? ariaLabel : null}
+        id={modalId}
+        aria-modal="true"
+        aria-label={ariaLabel}
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
-        aria-modal="true"
-        id={modalId}
       >
         {children}
 
@@ -123,7 +149,7 @@ export function Modal(props: ModalProps) {
       </div>
       <div
         className="z-40 fixed inset-0 bg-black/75 backdrop-blur-sm"
-        onClick={handleBackdropClick}
+        onClick={onClose}
         aria-hidden
       />
     </>
