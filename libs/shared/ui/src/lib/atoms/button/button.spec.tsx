@@ -3,6 +3,9 @@ import '@testing-library/jest-dom';
 
 import Button from './button';
 
+const text = 'Text';
+const node = <p>{text}</p>;
+
 describe('Button', () => {
   it('should render successfully', () => {
     const { baseElement } = render(<Button />);
@@ -11,15 +14,12 @@ describe('Button', () => {
   });
 
   it('should render successfully with a text passed as a child', () => {
-    const text = 'Text';
     const { baseElement } = render(<Button>{text}</Button>);
 
     expect(baseElement).toHaveTextContent(text);
   });
 
   it('should render successfully with a ReactNode passed as a child', () => {
-    const text = 'Text';
-    const node = <p>{text}</p>;
     const { baseElement } = render(<Button>{node}</Button>);
 
     expect(baseElement).toHaveTextContent(text);
@@ -38,11 +38,10 @@ describe('Button', () => {
   });
 
   it('should trigger an onClick event when clicked', () => {
-    const TEXT = 'Button text';
     const handleClick = jest.fn();
-    render(<Button onClick={handleClick}>{TEXT}</Button>);
+    render(<Button onClick={handleClick}>{text}</Button>);
 
-    fireEvent.click(screen.getByText(TEXT));
+    fireEvent.click(screen.getByText(text));
 
     expect(handleClick).toHaveBeenCalledTimes(1);
   });

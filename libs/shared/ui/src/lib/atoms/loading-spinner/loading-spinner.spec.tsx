@@ -3,6 +3,8 @@ import '@testing-library/jest-dom';
 
 import LoadingSpinner from './loading-spinner';
 
+const text = 'Text';
+
 describe('LoadingSpinner', () => {
   it('should render successfully', () => {
     const { baseElement } = render(<LoadingSpinner />);
@@ -10,13 +12,11 @@ describe('LoadingSpinner', () => {
   });
 
   it('should have text content', () => {
-    const text = 'Text';
     const { baseElement } = render(<LoadingSpinner>{text}</LoadingSpinner>);
     expect(baseElement).toHaveTextContent(text);
   });
 
   it('should have not visible text content', () => {
-    const text = 'Text';
     const { baseElement } = render(<LoadingSpinner>{text}</LoadingSpinner>);
     const hiddenElement = screen.queryByText(text);
 

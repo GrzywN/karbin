@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 
 import Logo from './logo';
 
+const tagName = 'h5';
+
 describe('Logo', () => {
   it('should render successfully', () => {
     const { baseElement } = render(<Logo />);
@@ -9,7 +11,6 @@ describe('Logo', () => {
   });
 
   it('should render as an element passed in "as" prop', () => {
-    const tagName = 'h5';
     render(<Logo as={tagName} />);
 
     expect(

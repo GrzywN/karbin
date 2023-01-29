@@ -10,6 +10,7 @@ describe('ButtonClose', () => {
     const { baseElement } = render(
       <ButtonClose ariaLabel={text} onClick={handleClick} />
     );
+
     expect(baseElement).toBeTruthy();
   });
 
