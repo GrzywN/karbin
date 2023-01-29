@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import Heading from './heading';
@@ -22,5 +22,15 @@ describe('Heading', () => {
     const { baseElement } = render(<Heading>{node}</Heading>);
 
     expect(baseElement).toHaveTextContent(text);
+  });
+
+  it('should render as an element passed in "as" prop', () => {
+    const tagName = 'h5';
+    const text = 'Text';
+    render(<Heading as={tagName}>{text}</Heading>);
+
+    expect(
+      screen.getByText(text).tagName === tagName.toUpperCase()
+    ).toBeTruthy();
   });
 });
