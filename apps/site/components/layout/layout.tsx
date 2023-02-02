@@ -27,9 +27,9 @@ export function Layout(props: LayoutProps) {
   return (
     <>
       <Navbar>
-        <Link href="/">
+        <a href="/">
           <Logo link />
-        </Link>
+        </a>
         <Navbar.Nav>
           <NavLinkWithNextRouting href="/about" name="About" />
           <NavLinkWithNextRouting href="/work" name="Work" />
