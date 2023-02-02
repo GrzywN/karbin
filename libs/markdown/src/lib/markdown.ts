@@ -1,7 +1,40 @@
 import { join } from 'path';
-import { readFileSync } from 'fs';
+import { readdirSync, readFileSync } from 'fs';
 import * as matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
+
+export function getPreviousBlogPostFileName(
+  postsPath: string,
+  blogPostTitle: string
+) {
+  const paths: string[] = readdirSync(postsPath).map((path: string) =>
+    path.replace(/\.mdx?/, '')
+  );
+
+  const pathIndex = paths.indexOf(blogPostTitle);
+
+  if (pathIndex === -1 || paths[pathIndex - 1] == null) {
+    return null;
+  }
+
+  return paths[pathIndex - 1];
+}
+
+export function getNextBlogPostFileName(
+  postsPath: string,
+  blogPostTitle: string
+) {
+  const paths: string[] = readdirSync(postsPath).map((path: string) =>
+    path.replace(/\.mdx?/, '')
+  );
+  const pathIndex = paths.indexOf(blogPostTitle);
+
+  if (pathIndex === -1 || paths[pathIndex + 1] == null) {
+    return null;
+  }
+
+  return paths[pathIndex + 1];
+}
 
 export function getParsedFileContentBySlug(
   fileName: string,
