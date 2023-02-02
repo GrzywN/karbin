@@ -15,7 +15,7 @@ export function BlogPostPreviewCard(props: BlogPostPreviewCardProps) {
   const { title, whenPublished, tags } = props;
 
   return (
-    <Link href={`article/${slugify(title, { trim: true, lower: true })}`}>
+    <Link href={`/article/${slugify(title, { trim: true, lower: true })}`}>
       <Paper classes="grid gap-4 p-2 hover:bg-tertiary-100">
         <Text as="h3" color="dark">
           {title}
