@@ -1,36 +1,39 @@
 import { useEffect } from 'react';
 import hljs from 'highlight.js/lib/common';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { MDXRemote } from 'next-mdx-remote';
-import { Article } from '@karbin/shared/ui';
+import { Section, Article } from '@karbin/shared/ui';
+
+import ArticleNavigationButton from '../article-navigation-button/article-navigation-button';
 
 import imageKarolBinkowski from '../../public/images/avatars/KarolBinkowski.png';
 import 'highlight.js/styles/atom-one-dark.css';
 
+import type {
+  ArticleFileContent,
+  ArticleFrontMatter,
+} from '../../types/Article';
+
 export interface ArticleSectionProps {
-  frontMatter: {
-    title: string;
-    date: string;
-    tags: string[];
-    author: {
-      name: string;
-    };
-  };
-  html: {
-    compiledSource: string;
-  };
+  previousArticleFrontMatter: ArticleFrontMatter | null;
+  currentArticle: ArticleFileContent;
+  nextArticleFrontMatter: ArticleFrontMatter | null;
 }
 
 export function ArticleSection(props: ArticleSectionProps) {
-  const { frontMatter, html } = props;
+  const { previousArticleFrontMatter, currentArticle, nextArticleFrontMatter } =
+    props;
+  const { frontMatter, html } = currentArticle;
   const { title, date, tags, author } = frontMatter;
+  const router = useRouter();
 
   useEffect(() => {
     hljs.highlightAll();
-  }, []);
+  }, [router]);
 
   return (
-    <>
+    <Section title={title}>
       <Article
         title={title}
         authorAvatarNode={
@@ -47,7 +50,22 @@ export function ArticleSection(props: ArticleSectionProps) {
         tags={tags}
         contentNode={<MDXRemote {...html} />}
       />
-    </>
+      <div className="flex items-center justify-between">
+        {previousArticleFrontMatter && (
+          <ArticleNavigationButton
+            frontMatter={previousArticleFrontMatter}
+            direction="left"
+          />
+        )}
+        <div className="grow" />
+        {nextArticleFrontMatter && (
+          <ArticleNavigationButton
+            frontMatter={nextArticleFrontMatter}
+            direction="right"
+          />
+        )}
+      </div>
+    </Section>
   );
 }
 

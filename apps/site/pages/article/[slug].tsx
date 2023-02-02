@@ -1,23 +1,22 @@
 import { join } from 'path';
 import { readdirSync } from 'fs';
-import { getParsedFileContentBySlug, renderMarkdown } from '@karbin/markdown';
+import {
+  getPreviousBlogPostFileName,
+  getNextBlogPostFileName,
+  getParsedFileContentBySlug,
+  renderMarkdown,
+} from '@karbin/markdown';
 
 import ArticleSection from '../../components/article-section/article-section';
+
+import type { Article, ArticleFrontMatter } from '../../types/Article';
 
 const POSTS_PATH = join(process.cwd(), 'content/articles');
 
 export interface ArticlePageProps {
-  frontMatter: {
-    title: string;
-    date: string;
-    tags: string[];
-    author: {
-      name: string;
-    };
-  };
-  html: {
-    compiledSource: string;
-  };
+  previousArticleFrontMatter: ArticleFrontMatter | null;
+  currentArticle: Article;
+  nextArticleFrontMatter: ArticleFrontMatter | null;
   slug: string;
 }
 
@@ -30,16 +29,41 @@ export const getStaticProps = async ({
 }: {
   params: ArticlePageProps;
 }) => {
-  const articleMarkdownContent = getParsedFileContentBySlug(
-    params.slug,
+  const currFileName = params.slug;
+  const prevFileName = getPreviousBlogPostFileName(POSTS_PATH, currFileName);
+  const nextFileName = getNextBlogPostFileName(POSTS_PATH, currFileName);
+
+  const currArticleMarkdownContent = getParsedFileContentBySlug(
+    currFileName,
     POSTS_PATH
   );
-  const html = await renderMarkdown(articleMarkdownContent.content);
+  const html = await renderMarkdown(currArticleMarkdownContent.content);
+
+  let prevArticleFrontMatter: ArticleFrontMatter | null = null;
+  let nextArticleFrontMatter: ArticleFrontMatter | null = null;
+
+  if (prevFileName != null) {
+    prevArticleFrontMatter = getParsedFileContentBySlug(
+      prevFileName,
+      POSTS_PATH
+    ).frontMatter;
+  }
+
+  if (nextFileName != null) {
+    nextArticleFrontMatter = getParsedFileContentBySlug(
+      nextFileName,
+      POSTS_PATH
+    ).frontMatter;
+  }
 
   return {
     props: {
-      frontMatter: articleMarkdownContent.frontMatter,
-      html,
+      previousArticleFrontMatter: prevArticleFrontMatter,
+      currentArticle: {
+        frontMatter: currArticleMarkdownContent.frontMatter,
+        html,
+      },
+      nextArticleFrontMatter: nextArticleFrontMatter,
     },
   };
 };
