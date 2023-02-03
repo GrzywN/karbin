@@ -1,4 +1,6 @@
 import { AppProps } from 'next/app';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Pacifico, Plus_Jakarta_Sans } from '@next/font/google';
 
@@ -18,6 +20,13 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 function Website({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    document.activeElement instanceof HTMLElement &&
+      document.activeElement.blur();
+  }, [router]);
+
   return (
     <>
       <Head>
