@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import {
   IconMail,
   IconBrandTwitter,
@@ -13,9 +12,9 @@ import {
   Button,
   Footer,
   Text,
+  Container,
 } from '@karbin/shared/ui';
-
-import { Container } from '@karbin/shared/ui';
+import Link from 'next/link';
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -27,9 +26,9 @@ export function Layout(props: LayoutProps) {
   return (
     <>
       <Navbar>
-        <a href="/">
+        <Link href="/">
           <Logo link />
-        </a>
+        </Link>
         <Navbar.Nav>
           <NavLinkWithNextRouting href="/about" name="About" />
           <NavLinkWithNextRouting href="/work" name="Work" />
