@@ -2,13 +2,14 @@ import { useEffect, createRef } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 import ButtonClose from '../../molecules/button-close/button-close';
+import Stack from '../../molecules/stack/stack';
 
 const modalStyles = cva(
   `
   z-50 fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-h-screen overflow-auto
-    min-h-[4.5rem] grid max-w-md w-full gap-8 rounded-2xl bg-white p-4 shadow-xl
+    min-h-[4.5rem] grid grid-cols-1 max-w-md w-full gap-8 rounded-2xl bg-white p-4 shadow-xl
   md:p-8
-  lg:flex lg:max-w-5xl lg:flex-row lg:gap-16 lg:p-12`,
+  lg:grid-cols-2 lg:max-w-5xl lg:gap-16 lg:p-12`,
   {
     variants: {
       color: {
@@ -163,16 +164,7 @@ export interface ModalBodyProps {
 function ModalBody(props: ModalBodyProps) {
   const { children } = props;
 
-  return (
-    <div
-      className="
-      w-full flex flex-col grow gap-4 text-start
-      md:gap-4
-      lg:gap-6"
-    >
-      {children}
-    </div>
-  );
+  return <Stack>{children}</Stack>;
 }
 
 Modal.ModalBody = ModalBody;
