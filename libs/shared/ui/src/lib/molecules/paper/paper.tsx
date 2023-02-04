@@ -1,6 +1,10 @@
 import { cva, VariantProps } from 'class-variance-authority';
+import { getVariantNames, filterVariants } from '../../utils/filter-variants';
 
-const paperStyles = cva('overflow-hidden rounded-lg shadow-lg', {
+import type { OverridableComponentProps } from '../../OverridableComponentProps';
+
+const paperDefaultClasses = 'overflow-hidden rounded-lg shadow-lg';
+const paperVariants = {
   variants: {
     color: {
       primary: 'bg-primary-400 text-neutral-900',
@@ -20,23 +24,45 @@ const paperStyles = cva('overflow-hidden rounded-lg shadow-lg', {
     },
   },
   defaultVariants: {
-    color: 'light',
+    color: 'light' as const,
     hasBorder: true,
   },
-});
+};
 
-export interface PaperProps extends VariantProps<typeof paperStyles> {
+const paperStyles = cva(paperDefaultClasses, paperVariants);
+
+interface ComponentProps extends VariantProps<typeof paperStyles> {
   classes?: string;
   children?: React.ReactNode;
 }
 
-export function Paper(props: PaperProps) {
-  const { classes = '', children = 'Lorem ipsum', ...passThroughProps } = props;
+export type PaperProps<E extends React.ElementType = 'div'> =
+  OverridableComponentProps<ComponentProps, E>;
+
+export function Paper<E extends React.ElementType = 'div'>(
+  props: PaperProps<E>
+) {
+  const {
+    as = 'div',
+    classes = '',
+    children = 'Lorem ipsum',
+    ...passThroughProps
+  } = props;
+  const Element = as;
+
+  const variantNames = getVariantNames(paperVariants);
+  const { variantProps, elementProps } = filterVariants(
+    variantNames,
+    passThroughProps
+  );
 
   return (
-    <div className={`${paperStyles(passThroughProps)} ${classes}`}>
+    <Element
+      className={`${paperStyles(variantProps)} ${classes}`}
+      {...elementProps}
+    >
       {children}
-    </div>
+    </Element>
   );
 }
 

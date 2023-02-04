@@ -1,10 +1,11 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import Paper from './paper';
 
 const text = 'Text';
 const node = <span>{text}</span>;
+const tagName = 'article';
 
 describe('Paper', () => {
   it('should render successfully', () => {
@@ -22,5 +23,13 @@ describe('Paper', () => {
     const { baseElement } = render(<Paper>{node}</Paper>);
 
     expect(baseElement).toHaveTextContent(text);
+  });
+
+  it('should render as an element passed in "as" prop', () => {
+    render(<Paper as={tagName}>{text}</Paper>);
+
+    expect(
+      screen.getByText(text).tagName === tagName.toUpperCase()
+    ).toBeTruthy();
   });
 });
