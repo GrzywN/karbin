@@ -1,4 +1,5 @@
 import Paper from '../../molecules/paper/paper';
+import Stack from '../../molecules/stack/stack';
 import Button from '../../atoms/button/button';
 import Text from '../../atoms/text/text';
 import { IconMail, IconFile } from '@tabler/icons';
@@ -15,24 +16,26 @@ export function EmailAndResumeBox(props: EmailAndResumeBoxProps) {
   } = props;
 
   return (
-    <Paper classes="p-4 grid gap-4 max-w-md">
-      <Button as="a" href={`mailto:${email}`} color="primary">
-        <IconMail />
-        <Text color="dark" size="xs">
-          {email}
+    <Paper classes="p-4 max-w-md">
+      <Stack>
+        <Button as="a" href={`mailto:${email}`} color="primary">
+          <IconMail />
+          <Text color="dark" size="xs">
+            {email}
+          </Text>
+        </Button>
+        <Text
+          as="a"
+          href={`/${resumeFileName}`}
+          type="application/pdf"
+          color="dark"
+          link
+        >
+          <span className="inline-flex items-center gap-2 underline">
+            <IconFile color="black" /> {resumeFileName}
+          </span>
         </Text>
-      </Button>
-      <Text
-        as="a"
-        href={`/${resumeFileName}`}
-        type="application/pdf"
-        color="dark"
-        link
-      >
-        <span className="inline-flex items-center gap-2 underline">
-          <IconFile color="black" /> {resumeFileName}
-        </span>
-      </Text>
+      </Stack>
     </Paper>
   );
 }

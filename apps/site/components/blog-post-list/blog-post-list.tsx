@@ -1,4 +1,4 @@
-import { Paper, Text } from '@karbin/shared/ui';
+import { Paper, Stack, Text } from '@karbin/shared/ui';
 
 import {
   BlogPostPreviewCard,
@@ -15,13 +15,15 @@ export function BlogPostList(props: BlogPostListProps) {
   return (
     <Paper classes="p-4 max-w-3xl" color="tertiary">
       {posts.length > 0 ? (
-        <ul className="grid gap-3">
+        <Stack>
           {posts.map((postProps: BlogPostPreviewCardProps, index) => (
             <BlogPostPreviewCard key={index} {...postProps} />
           ))}
-        </ul>
+        </Stack>
       ) : (
-        <Text color="dark" size="xl">There are no articles here yet.</Text>
+        <Text color="dark" size="xl">
+          There are no articles here yet.
+        </Text>
       )}
     </Paper>
   );
