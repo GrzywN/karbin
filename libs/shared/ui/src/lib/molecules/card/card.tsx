@@ -18,7 +18,7 @@ export function Card(props: CardProps) {
     ),
   } = props;
 
-  return <Paper classes="flex flex-col max-w-sm">{children} </Paper>;
+  return <Paper classes="flex flex-col max-w-sm">{children}</Paper>;
 }
 
 export interface BodyProps {
