@@ -33,8 +33,9 @@ export function AboutSection(props: AboutSectionProps) {
         </figure>
         <div className="flex items-center lg:flex-row lg:gap-16">
           <Paper
-            classes="max-w-2xl flex-1 p-4 flex flex-col items-start justify-between gap-4"
+            classes="max-w-2xl flex-1 flex flex-col items-start justify-between gap-4"
             color="primary"
+            hasPadding
           >
             {paragraphs.map((paragraph, index) => (
               <Text size="sm" color="dark" weight="medium" key={index}>
