@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import hljs from 'highlight.js/lib/common';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { MDXRemote } from 'next-mdx-remote';
-import { Section, Article } from '@karbin/shared/ui';
-
-import ArticleNavigationButton from '../article-navigation-button/article-navigation-button';
+import slugify from 'slugify';
+import { Section, Article, ArticleNavigationButton } from '@karbin/shared/ui';
 
 import imageKarolBinkowski from '../../public/images/avatars/KarolBinkowski.png';
+
+import hljs from 'highlight.js/lib/common';
 import 'highlight.js/styles/atom-one-dark.css';
 
 import type {
@@ -32,6 +32,24 @@ export function ArticleSection(props: ArticleSectionProps) {
     hljs.highlightAll();
   }, [router]);
 
+  const handlePreviousArticleButtonClick = () => {
+    router.push(
+      `/article/${slugify(previousArticleFrontMatter.title, {
+        trim: true,
+        lower: true,
+      })}`
+    );
+  };
+
+  const handleNextArticleButtonClick = () => {
+    router.push(
+      `/article/${slugify(nextArticleFrontMatter.title, {
+        trim: true,
+        lower: true,
+      })}`
+    );
+  };
+
   return (
     <Section title={title}>
       <Article
@@ -53,15 +71,25 @@ export function ArticleSection(props: ArticleSectionProps) {
       <div className="flex items-center justify-between">
         {previousArticleFrontMatter && (
           <ArticleNavigationButton
-            frontMatter={previousArticleFrontMatter}
-            direction="left"
+            title={previousArticleFrontMatter.title}
+            formattedDate={new Date(
+              previousArticleFrontMatter.date
+            ).toLocaleDateString()}
+            tags={previousArticleFrontMatter.tags}
+            direction="right"
+            onClick={handlePreviousArticleButtonClick}
           />
         )}
         <div className="grow" />
         {nextArticleFrontMatter && (
           <ArticleNavigationButton
-            frontMatter={nextArticleFrontMatter}
+            title={nextArticleFrontMatter.title}
+            formattedDate={new Date(
+              nextArticleFrontMatter.date
+            ).toLocaleDateString()}
+            tags={nextArticleFrontMatter.tags}
             direction="right"
+            onClick={handleNextArticleButtonClick}
           />
         )}
       </div>
