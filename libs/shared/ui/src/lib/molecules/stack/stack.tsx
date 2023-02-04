@@ -8,8 +8,7 @@ export function Stack(props: StackProps) {
   return (
     <div
       className="
-      w-full flex flex-col gap-4
-      lg:gap-6"
+      w-full grid gap-3"
     >
       {children}
     </div>
