@@ -15,6 +15,7 @@ const nextConfig = {
   images: {
     formats: ['image/webp'],
   },
+  pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts', 'xml'],
 };
 
 module.exports = withNx(nextConfig);
