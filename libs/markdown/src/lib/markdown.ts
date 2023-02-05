@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { readdirSync, readFileSync } from 'fs';
-import * as matter from 'gray-matter';
+import matter from 'gray-matter';
 import { serialize } from 'next-mdx-remote/serialize';
 
 export function getPreviousBlogPostFileName(

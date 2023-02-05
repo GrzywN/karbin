@@ -9,13 +9,16 @@ import {
 
 import ArticleSection from '../../components/article-section/article-section';
 
-import type { Article, ArticleFrontMatter } from '../../types/Article';
+import type {
+  ArticleFileContent,
+  ArticleFrontMatter,
+} from '../../types/Article';
 
 const POSTS_PATH = join(process.cwd(), 'content/articles');
 
 export interface ArticlePageProps {
   previousArticleFrontMatter: ArticleFrontMatter | null;
-  currentArticle: Article;
+  currentArticle: ArticleFileContent;
   nextArticleFrontMatter: ArticleFrontMatter | null;
   slug: string;
 }
@@ -46,14 +49,14 @@ export const getStaticProps = async ({
     prevArticleFrontMatter = getParsedFileContentBySlug(
       prevFileName,
       POSTS_PATH
-    ).frontMatter;
+    ).frontMatter as ArticleFrontMatter;
   }
 
   if (nextFileName != null) {
     nextArticleFrontMatter = getParsedFileContentBySlug(
       nextFileName,
       POSTS_PATH
-    ).frontMatter;
+    ).frontMatter as ArticleFrontMatter;
   }
 
   return {

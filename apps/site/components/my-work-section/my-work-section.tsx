@@ -60,7 +60,7 @@ export function MyWorkSection(props: MyWorkSectionProps) {
             <Card key={index}>
               <Image src={imageSrc} alt={imageAlt} priority={imagePriority} />
               <Card.Body>
-                <Heading as="h3" size="xs" color="dark">
+                <Heading as="h2" size="xs" color="dark">
                   {textHeading}
                 </Heading>
                 <Text as="p" color="dark" size="xs" weight="medium">

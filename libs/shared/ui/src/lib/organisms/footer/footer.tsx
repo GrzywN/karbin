@@ -24,7 +24,7 @@ export function Footer(props: FooterProps) {
   } = props;
 
   return (
-    <footer className="mx-auto mt-4 font-sans text-neutral-200 max-w-7xl py-4 sm:py-6">
+    <footer className="mx-auto w-full mt-4 font-sans text-neutral-200 max-w-7xl py-4 sm:py-6">
       <div className="px-8 sm:flex sm:items-center sm:justify-between">
         {children}
       </div>

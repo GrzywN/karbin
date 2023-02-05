@@ -33,7 +33,7 @@ function Website({ Component, pageProps }: AppProps) {
         <title>Karol Binkowski | Front-end developer</title>
       </Head>
       <div
-        className={`${pacifico.variable} ${plusJakartaSans.variable} font-sans`}
+        className={`${pacifico.variable} ${plusJakartaSans.variable} font-sans min-h-screen flex flex-col justify-between`}
       >
         <Layout>
           <Component {...pageProps} />
