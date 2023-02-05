@@ -61,7 +61,7 @@ export const getStaticProps = async ({
 
   return {
     props: {
-      previousArticleFrontMatter: prevArticleFrontMatter ,
+      previousArticleFrontMatter: prevArticleFrontMatter,
       currentArticle: {
         frontMatter: currArticleMarkdownContent.frontMatter,
         html,
