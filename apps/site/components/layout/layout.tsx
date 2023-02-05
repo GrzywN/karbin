@@ -16,6 +16,8 @@ import {
 } from '@karbin/shared/ui';
 import Link from 'next/link';
 
+import Seo from '../seo/seo';
+
 export interface LayoutProps {
   children: React.ReactNode;
 }
@@ -25,6 +27,7 @@ export function Layout(props: LayoutProps) {
 
   return (
     <>
+      <Seo />
       <Navbar>
         <Link href="/">
           <Logo as="span" link />
