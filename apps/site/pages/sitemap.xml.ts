@@ -1,7 +1,10 @@
 import { readdirSync } from 'fs';
 import { join } from 'path';
 
-const POSTS_PATH = join(process.cwd(), 'content/articles');
+const POSTS_PATH =
+  process.env.NODE_ENV === 'production'
+    ? 'var/task/content/articles'
+    : join(process.cwd(), 'content/articles');
 const BASE_URL = process.env.SITE_URL || 'https://karolbinkowski.me';
 const EXTERNAL_DATA_URL = `${BASE_URL}/article`;
 
