@@ -7,7 +7,7 @@ export function Section(props: SectionProps) {
   const { title, children } = props;
 
   return (
-    <section className="rounded-md grid gap-8 max-w-7xl" title={title}>
+    <section className="h-max rounded-md grid gap-8 max-w-7xl" title={title}>
       {children}
     </section>
   );
