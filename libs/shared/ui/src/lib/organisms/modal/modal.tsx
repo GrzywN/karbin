@@ -33,27 +33,14 @@ const modalStyles = cva(
   }
 );
 
-export interface ModalProps
-  extends VariantProps<typeof modalStyles>,
-    ModalWithAriaProps {
+export interface ModalProps extends VariantProps<typeof modalStyles> {
   open: boolean;
   onClose: () => void;
   children: React.ReactNode;
   modalId: string;
+  ariaLabel?: string;
+  titleId?: string;
   descriptionId: string;
-}
-
-type ModalWithAriaProps = ModalWithAriaLabelProps &
-  ModalWithAriaLabelledByProps;
-
-interface ModalWithAriaLabelProps {
-  ariaLabel: string;
-  titleId: never;
-}
-
-interface ModalWithAriaLabelledByProps {
-  ariaLabel: never;
-  titleId: string;
 }
 
 export function Modal(props: ModalProps) {
@@ -61,9 +48,9 @@ export function Modal(props: ModalProps) {
     open,
     onClose,
     children,
-    ariaLabel,
+    ariaLabel = null,
     modalId,
-    titleId,
+    titleId = null,
     descriptionId,
     ...passThroughProps
   } = props;
