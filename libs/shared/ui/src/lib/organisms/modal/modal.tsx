@@ -7,7 +7,7 @@ import Stack from '../../molecules/stack/stack';
 const modalStyles = cva(
   `
   z-50 fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-h-screen overflow-auto
-    min-h-[4.5rem] grid grid-cols-1 max-w-md w-full gap-8 rounded-2xl bg-white p-4 shadow-xl
+    min-h-[4.5rem] grid grid-cols-1 max-w-md w-[calc(100%-2rem)] gap-8 rounded-2xl bg-white p-4 shadow-xl
   md:p-8
   lg:grid-cols-2 lg:max-w-5xl lg:gap-16 lg:p-12`,
   {
