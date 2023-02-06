@@ -17,7 +17,7 @@ export function ChipList(props: ChipListProps) {
   } = props;
 
   return (
-    <ul className="flex flex-wrap gap-2">
+    <ul className="flex flex-wrap gap-1 md:gap-2">
       {children.map((chip, index) => (
         <li key={index}>{chip}</li>
       ))}
