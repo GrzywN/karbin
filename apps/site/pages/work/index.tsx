@@ -21,7 +21,7 @@ export function WorkPage() {
                 request.`,
           imageSrc: imageBorKurPreview,
           imageAlt: 'A BOR-KUR website preview.',
-          tags: ['Next.js', 'TypeScript', 'Contentful', 'i18n'],
+          tags: ['Next.js', 'Headless CMS', 'i18n'],
           linkPreview: 'https://bor-kur.pl/',
           linkSource: 'https://github.com/GrzywN/bor-kur',
         },
