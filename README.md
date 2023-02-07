@@ -9,7 +9,10 @@ My personal website with expansion possibilities based on the design system of m
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Home](./docs/screenshots/Home.png)
+![About](./docs/screenshots/About.png)
+![Work](./docs/screenshots/Work.png)
+![Articles](./docs/screenshots/Articles.png)
 
 
 ## Tech Stack
