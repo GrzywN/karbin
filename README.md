@@ -37,31 +37,7 @@ My personal website with expansion possibilities based on the design system of m
 - Extract site components to the design system
 
 **You can check out all the planned changes, fixes and refactorings [here](https://github.com/users/GrzywN/projects/3/).**
-## Run Locally
 
-Clone the project
-
-```bash
-  git clone https://github.com/GrzywN/karbin.git
-```
-
-Go to the project directory
-
-```bash
-  cd karbin
-```
-
-Install dependencies
-
-```bash
-  yarn install
-```
-
-Start the server
-
-```bash
-  yarn start
-```
 ## Run Locally
 
 Clone the project
