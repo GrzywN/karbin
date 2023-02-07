@@ -12,6 +12,17 @@ My personal website with expansion possibilities based on the design system of m
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
 
+## Tech Stack
+
+**Framework:** `Next.js`, `React`
+
+**Design:** `CVA`, `Storybook`, `Tailwind CSS`, `@tabler/icons`
+
+**Blog:** `gray-matter`, `highlight.js`, `next-mdx-remote`
+
+**Workflow:** `ESLint`,`Nx`, `TypeScript`, `Prettier`
+
+
 ## Features
 
 - Blog with MDX and code snippet support
@@ -23,16 +34,31 @@ My personal website with expansion possibilities based on the design system of m
 - Extract site components to the design system
 
 **You can check out all the planned changes, fixes and refactorings [here](https://github.com/users/GrzywN/projects/3/).**
-## Installation
+## Run Locally
 
-Install **karbin** with yarn
+Clone the project
 
 ```bash
   git clone https://github.com/GrzywN/karbin.git
+```
+
+Go to the project directory
+
+```bash
   cd karbin
+```
+
+Install dependencies
+
+```bash
   yarn install
 ```
-    
+
+Start the server
+
+```bash
+  yarn start
+```
 ## Run Locally
 
 Clone the project
@@ -84,14 +110,3 @@ To deploy this project on Vercel:
 
     yarn install
     ```
-
-
-## Tech Stack
-
-**Framework:** `Next.js`, `React`
-
-**Design:** `CVA`, `Storybook`, `Tailwind CSS`, `@tabler/icons`
-
-**Blog:** `gray-matter`, `highlight.js`, `next-mdx-remote`
-
-**Workflow:** `ESLint`,`Nx`, `TypeScript`, `Prettier`
