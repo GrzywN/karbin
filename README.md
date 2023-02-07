@@ -105,8 +105,7 @@ To deploy this project on Vercel:
 
 - Set `Output Directory` to `dist/apps/site/.next`.
 - Run:
-    ```bash
-    yarn nx build site --prod
-
-    yarn install
-    ```
+```bash
+yarn nx build site --prod
+yarn install
+```
