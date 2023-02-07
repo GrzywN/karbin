@@ -43,38 +43,38 @@ My personal website with expansion possibilities based on the design system of m
 Clone the project
 
 ```bash
-  git clone https://github.com/GrzywN/karbin.git
+git clone https://github.com/GrzywN/karbin.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd karbin
+cd karbin
 ```
 
 Install dependencies
 
 ```bash
-  yarn install
+yarn install
 ```
 
 Start the server
 
 ```bash
-  yarn start
+yarn start
 ```
 ## Running Tests
 
 To run tests, run the following command
 
 ```bash
-  yarn test site
-  yarn test shared-ui
+yarn test site
+yarn test shared-ui
 ```
 To run e2e tests, run the following command
 
 ```bash
-  yarn nx e2e shared-ui-e2e
+yarn nx e2e shared-ui-e2e
 ```
 
 
