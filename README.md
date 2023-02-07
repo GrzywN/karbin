@@ -104,8 +104,5 @@ To run e2e tests, run the following command
 To deploy this project on Vercel:
 
 - Set `Output Directory` to `dist/apps/site/.next`.
-- Run:
-```bash
-yarn nx build site --prod
-yarn install
-```
+- Install dependencies using yarn `yarn install`
+- Run `yarn nx build site --prod`
