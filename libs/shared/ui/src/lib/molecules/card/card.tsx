@@ -1,4 +1,4 @@
-import Paper from '../paper/paper';
+import Paper from '../../molecules/paper/paper';
 
 export interface CardProps {
   children?: React.ReactNode;

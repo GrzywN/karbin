@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 import { getVariantNames, filterVariants } from '../../utils/filter-variants';
-import { LoadingSpinner } from '../loading-spinner/loading-spinner';
+import { LoadingSpinner } from '../../atoms/loading-spinner/loading-spinner';
 
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
