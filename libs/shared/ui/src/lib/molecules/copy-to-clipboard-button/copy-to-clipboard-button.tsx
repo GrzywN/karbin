@@ -56,7 +56,7 @@ export function CopyToClipboardButton(props: CopyToClipboardButtonProps) {
       </Button>
       {value && opened && (
         <Paper
-          classes={`p-2 absolute ${
+          className={`p-2 absolute ${
             position === 'top'
               ? '-top-2 -right-2 -translate-y-full'
               : '-bottom-2 -right-2 translate-y-full'
@@ -68,7 +68,7 @@ export function CopyToClipboardButton(props: CopyToClipboardButtonProps) {
       )}
       {error && (
         <Paper
-          classes={`p-2 absolute ${
+          className={`p-2 absolute ${
             position === 'top'
               ? '-top-2 -right-2 -translate-y-full'
               : '-bottom-2 -right-2 translate-y-full'

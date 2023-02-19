@@ -13,7 +13,7 @@ export function BlogPostList(props: BlogPostListProps) {
   const { posts } = props;
 
   return (
-    <Paper classes="max-w-3xl" hasPadding color="tertiary">
+    <Paper className="max-w-3xl" hasPadding color="tertiary">
       {posts.length > 0 ? (
         <Stack>
           {posts.map((postProps: BlogPostPreviewCardProps, index) => (
