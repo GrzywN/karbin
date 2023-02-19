@@ -12,7 +12,10 @@ const text = 'Text';
 
 describe('useCopyToClipboard', () => {
   let hook = renderHook(() => useCopyToClipboard());
-  const navigatorClipboardWriteTextSpy = jest.spyOn(navigator.clipboard, "writeText");
+  const navigatorClipboardWriteTextSpy = jest.spyOn(
+    navigator.clipboard,
+    'writeText'
+  );
 
   beforeEach(() => {
     hook = renderHook(() => useCopyToClipboard());
