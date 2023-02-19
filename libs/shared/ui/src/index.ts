@@ -1,3 +1,5 @@
+export * from './lib/molecules/copy-to-clipboard-button/copy-to-clipboard-button';
+export * from './lib/hooks/use-copy-to-clipboard/use-copy-to-clipboard';
 export * from './lib/molecules/article-navigation-button/article-navigation-button';
 export * from './lib/molecules/stack/stack';
 export * from './lib/molecules/category-list-box/category-list-box';
