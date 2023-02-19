@@ -3,7 +3,7 @@ import { getVariantNames, filterVariants } from '../../utils/filter-variants';
 
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
-const paperDefaultClasses = 'overflow-hidden rounded-lg shadow-lg';
+const paperDefaultClasses = 'rounded-lg shadow-lg';
 const paperVariants = {
   variants: {
     color: {
