@@ -19,7 +19,7 @@ export function EmailAndResumeBox(props: EmailAndResumeBoxProps) {
   return (
     <Paper classes="p-4 max-w-md">
       <Stack>
-        <span className="relative inline-flex items-center gap-2 underline">
+        <address className="not-italic relative inline-flex items-center gap-2 underline">
           <Button as="a" href={`mailto:${email}`} color="primary">
             <IconMail />
             <Text color="dark" size="xs">
@@ -32,7 +32,7 @@ export function EmailAndResumeBox(props: EmailAndResumeBoxProps) {
             popUpTextOnSuccess="Copied to clipboard!"
             popUpTextOnError="Failed to copy to clipboard!"
           />
-        </span>
+        </address>
         <Text
           as="a"
           href={`/${resumeFileName}`}
