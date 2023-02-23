@@ -2,6 +2,11 @@
   "name": "karbin",
   "version": "0.0.0",
   "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
+  },
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
