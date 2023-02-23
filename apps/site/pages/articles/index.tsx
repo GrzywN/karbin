@@ -1,6 +1,6 @@
-import { join } from 'path';
-import { readdirSync } from 'fs';
 import { getParsedFileContentBySlug } from '@karbin/markdown';
+import { readdirSync } from 'fs';
+import { join } from 'path';
 
 import AllArticlesSection from '../../components/all-articles-section/all-articles-section';
 
@@ -41,7 +41,7 @@ export const getStaticProps = () => {
     props: {
       articleFrontMatters,
     },
-    revalidate: 1200,
+    revalidate: 15,
   };
 };
 

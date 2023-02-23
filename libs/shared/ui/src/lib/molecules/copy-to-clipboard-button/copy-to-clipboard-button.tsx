@@ -1,8 +1,8 @@
-import { useState, useCallback } from 'react';
-import Button from '../../atoms/button/button';
-import Paper from '../../molecules/paper/paper';
-import useCopyToClipboard from '../../hooks/use-copy-to-clipboard/use-copy-to-clipboard';
 import { IconClipboard } from '@tabler/icons';
+import { useCallback, useState } from 'react';
+import Button from '../../atoms/button/button';
+import useCopyToClipboard from '../../hooks/use-copy-to-clipboard/use-copy-to-clipboard';
+import Paper from '../../molecules/paper/paper';
 
 export interface CopyToClipboardButtonProps {
   buttonLabel: string;
@@ -56,7 +56,7 @@ export function CopyToClipboardButton(props: CopyToClipboardButtonProps) {
       </Button>
       {value && opened && (
         <Paper
-          classes={`p-2 absolute ${
+          className={`p-2 absolute ${
             position === 'top'
               ? '-top-2 -right-2 -translate-y-full'
               : '-bottom-2 -right-2 translate-y-full'
@@ -68,7 +68,7 @@ export function CopyToClipboardButton(props: CopyToClipboardButtonProps) {
       )}
       {error && (
         <Paper
-          classes={`p-2 absolute ${
+          className={`p-2 absolute ${
             position === 'top'
               ? '-top-2 -right-2 -translate-y-full'
               : '-bottom-2 -right-2 translate-y-full'

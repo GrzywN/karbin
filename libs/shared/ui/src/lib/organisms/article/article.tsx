@@ -1,5 +1,5 @@
-import Paper from '../../molecules/paper/paper';
 import ArticleHeader from '../../molecules/article-header/article-header';
+import Paper from '../../molecules/paper/paper';
 
 export interface ArticleProps {
   title: string;
@@ -36,7 +36,7 @@ export function Article(props: ArticleProps) {
   } = props;
 
   return (
-    <Paper classes="p-4 sm:px-6 lg:px-8 lg:py-16" color="dark">
+    <Paper className="p-4 sm:px-6 lg:px-8 lg:py-16" color="dark">
       <article className="mx-auto grid gap-8" title="Blog post">
         <ArticleHeader
           authorAvatarNode={authorAvatarNode}

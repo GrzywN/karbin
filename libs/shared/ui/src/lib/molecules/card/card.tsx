@@ -1,4 +1,4 @@
-import Paper from '../paper/paper';
+import Paper from '../../molecules/paper/paper';
 
 export interface CardProps {
   children?: React.ReactNode;
@@ -18,7 +18,7 @@ export function Card(props: CardProps) {
     ),
   } = props;
 
-  return <Paper classes="flex flex-col max-w-sm">{children}</Paper>;
+  return <Paper className="flex flex-col max-w-sm">{children}</Paper>;
 }
 
 export interface BodyProps {

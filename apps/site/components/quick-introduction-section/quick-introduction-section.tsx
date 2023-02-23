@@ -1,4 +1,4 @@
-import { Section, Paper, Text } from '@karbin/shared/ui';
+import { Paper, Section, Text } from '@karbin/shared/ui';
 
 export interface QuickIntroductionSectionProps {
   sectionTitle: string;
@@ -10,7 +10,7 @@ export function QuickIntroductionSection(props: QuickIntroductionSectionProps) {
 
   return (
     <Section title={sectionTitle}>
-      <Paper classes="grid max-w-xl" color="primary" hasPadding>
+      <Paper className="grid max-w-xl" color="primary" hasPadding>
         <Text as="p" size="sm" color="dark" weight="medium">
           {text}
         </Text>

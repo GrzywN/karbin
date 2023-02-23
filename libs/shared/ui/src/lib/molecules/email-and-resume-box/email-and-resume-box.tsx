@@ -1,9 +1,9 @@
+import { IconFile, IconMail } from '@tabler/icons';
+import Button from '../../atoms/button/button';
+import Text from '../../atoms/text/text';
+import CopyToClipboardButton from '../../molecules/copy-to-clipboard-button/copy-to-clipboard-button';
 import Paper from '../../molecules/paper/paper';
 import Stack from '../../molecules/stack/stack';
-import Button from '../../atoms/button/button';
-import CopyToClipboardButton from '../../molecules/copy-to-clipboard-button/copy-to-clipboard-button';
-import Text from '../../atoms/text/text';
-import { IconMail, IconFile } from '@tabler/icons';
 
 export interface EmailAndResumeBoxProps {
   email: string;
@@ -17,9 +17,9 @@ export function EmailAndResumeBox(props: EmailAndResumeBoxProps) {
   } = props;
 
   return (
-    <Paper classes="p-4 max-w-md">
+    <Paper className="p-4 max-w-md">
       <Stack>
-        <span className="relative inline-flex items-center gap-2 underline">
+        <address className="not-italic relative inline-flex items-center gap-2 underline">
           <Button as="a" href={`mailto:${email}`} color="primary">
             <IconMail />
             <Text color="dark" size="xs">
@@ -32,7 +32,7 @@ export function EmailAndResumeBox(props: EmailAndResumeBoxProps) {
             popUpTextOnSuccess="Copied to clipboard!"
             popUpTextOnError="Failed to copy to clipboard!"
           />
-        </span>
+        </address>
         <Text
           as="a"
           href={`/${resumeFileName}`}

@@ -1,13 +1,13 @@
-import Image, { StaticImageData } from 'next/image';
-import { IconSearch, IconBrandGithub, IconDeviceLaptop } from '@tabler/icons';
 import {
-  Section,
+  ButtonGroup,
+  ChipList,
   Heading,
   Paper,
-  ChipList,
+  Section,
   Text,
-  ButtonGroup,
 } from '@karbin/shared/ui';
+import { IconBrandGithub, IconDeviceLaptop, IconSearch } from '@tabler/icons';
+import Image, { StaticImageData } from 'next/image';
 
 export interface Project {
   imageSrc: StaticImageData;
@@ -36,7 +36,7 @@ export function WorkSection(props: WorkSectionProps) {
       </Heading>
       {projects.map((project: Project) => (
         <Paper
-          classes="p-4 flex flex-col-reverse gap-8 md:p-12 md:gap-12 lg:gap-16 lg:grid lg:grid-cols-2"
+          className="p-4 flex flex-col-reverse gap-8 md:p-12 md:gap-12 lg:gap-16 lg:grid lg:grid-cols-2"
           key={project.title}
         >
           <div className="w-full flex flex-col grow gap-4 text-start md:gap-4 lg:gap-6">
@@ -95,7 +95,11 @@ export function WorkSection(props: WorkSectionProps) {
               )}
             </ButtonGroup>
           </div>
-          <Image className="object-left object-contain max-h-96 lg:max-h-full" src={project.imageSrc} alt={project.imageAlt} />
+          <Image
+            className="object-left object-contain max-h-96 lg:max-h-full"
+            src={project.imageSrc}
+            alt={project.imageAlt}
+          />
         </Paper>
       ))}
     </Section>

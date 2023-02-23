@@ -1,5 +1,5 @@
-import { Paper, PaperProps } from '../../molecules/paper/paper';
 import CategoryListBox from '../../molecules/category-list-box/category-list-box';
+import { Paper, PaperProps } from '../../molecules/paper/paper';
 
 export interface MultiCategoryListBoxProps extends PaperProps {
   classes?: string;
@@ -20,7 +20,7 @@ export function MultiCategoryListBox(props: MultiCategoryListBoxProps) {
 
   return (
     <Paper
-      classes={`p-8 grid items-start gap-12 grid-cols-1 md:p-10 md:grid-cols-2 xl:grid-cols-3 xl:p-12 ${classes}`}
+      className={`p-8 grid items-start gap-12 grid-cols-1 md:p-10 md:grid-cols-2 xl:grid-cols-3 xl:p-12 ${classes}`}
       {...passThroughProps}
     >
       {children}

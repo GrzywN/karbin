@@ -1,11 +1,11 @@
-import { join } from 'path';
-import { readdirSync } from 'fs';
 import {
-  getPreviousBlogPostFileName,
   getNextBlogPostFileName,
   getParsedFileContentBySlug,
+  getPreviousBlogPostFileName,
   renderMarkdown,
 } from '@karbin/markdown';
+import { readdirSync } from 'fs';
+import { join } from 'path';
 
 import ArticleSection from '../../components/article-section/article-section';
 
@@ -68,12 +68,13 @@ export const getStaticProps = async ({
       },
       nextArticleFrontMatter: nextArticleFrontMatter,
     },
+    revalidate: 15,
   };
 };
 
 export const getStaticPaths = () => {
   const paths = readdirSync(POSTS_PATH)
-    .map((path) => path.replace(/\.mdx?/, ''))
+    .map((path) => path.replace(/\.mdx?$/, ''))
     .map((slug) => ({ params: { slug } }));
 
   return {

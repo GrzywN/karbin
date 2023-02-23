@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
 import { Twirl as Hamburger } from 'hamburger-react';
+import React, { useContext, useEffect, useState } from 'react';
 
-import { Logo } from '../../atoms/logo/logo';
-import { NavLink } from '../../atoms/nav-link/nav-link';
+import Logo from '../../atoms/logo/logo';
+import NavLink from '../../atoms/nav-link/nav-link';
 
 export interface NavbarContextType {
   opened: boolean;

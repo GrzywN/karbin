@@ -1,5 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority';
-import { getVariantNames, filterVariants } from '../../utils/filter-variants';
+import { filterVariants, getVariantNames } from '../../utils/filter-variants';
 
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
@@ -32,7 +32,7 @@ const paperVariants = {
 const paperStyles = cva(paperDefaultClasses, paperVariants);
 
 interface ComponentProps extends VariantProps<typeof paperStyles> {
-  classes?: string;
+  className?: string;
   children?: React.ReactNode;
 }
 
@@ -44,7 +44,7 @@ export function Paper<E extends React.ElementType = 'div'>(
 ) {
   const {
     as = 'div',
-    classes = '',
+    className = '',
     children = 'Lorem ipsum',
     ...passThroughProps
   } = props;
@@ -58,7 +58,7 @@ export function Paper<E extends React.ElementType = 'div'>(
 
   return (
     <Element
-      className={`${paperStyles(variantProps)} ${classes}`}
+      className={`${paperStyles(variantProps)} ${className}`}
       {...elementProps}
     >
       {children}
