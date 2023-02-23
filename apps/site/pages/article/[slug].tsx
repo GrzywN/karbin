@@ -73,7 +73,7 @@ export const getStaticProps = async ({
 
 export const getStaticPaths = () => {
   const paths = readdirSync(POSTS_PATH)
-    .map((path) => path.replace(/\.mdx?/, ''))
+    .map((path) => path.replace(/\.mdx?$/, ''))
     .map((slug) => ({ params: { slug } }));
 
   return {
