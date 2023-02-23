@@ -1,13 +1,13 @@
-import Image, { StaticImageData } from 'next/image';
-import { IconSearch, IconBrandGithub, IconDeviceLaptop } from '@tabler/icons';
 import {
-  Section,
+  ButtonGroup,
+  ChipList,
   Heading,
   Paper,
-  ChipList,
+  Section,
   Text,
-  ButtonGroup,
 } from '@karbin/shared/ui';
+import { IconBrandGithub, IconDeviceLaptop, IconSearch } from '@tabler/icons';
+import Image, { StaticImageData } from 'next/image';
 
 export interface Project {
   imageSrc: StaticImageData;

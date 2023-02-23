@@ -1,8 +1,8 @@
-import { useState, useCallback } from 'react';
-import Button from '../../atoms/button/button';
-import Paper from '../../molecules/paper/paper';
-import useCopyToClipboard from '../../hooks/use-copy-to-clipboard/use-copy-to-clipboard';
 import { IconClipboard } from '@tabler/icons';
+import { useCallback, useState } from 'react';
+import Button from '../../atoms/button/button';
+import useCopyToClipboard from '../../hooks/use-copy-to-clipboard/use-copy-to-clipboard';
+import Paper from '../../molecules/paper/paper';
 
 export interface CopyToClipboardButtonProps {
   buttonLabel: string;

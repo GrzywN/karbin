@@ -1,5 +1,5 @@
-import Paper from '../../molecules/paper/paper';
 import ArticleHeader from '../../molecules/article-header/article-header';
+import Paper from '../../molecules/paper/paper';
 
 export interface ArticleProps {
   title: string;

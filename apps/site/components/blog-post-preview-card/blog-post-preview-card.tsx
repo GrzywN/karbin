@@ -1,7 +1,7 @@
+import { ChipList, Paper, Text } from '@karbin/shared/ui';
+import { IconCalendar } from '@tabler/icons';
 import Link from 'next/link';
 import slugify from 'slugify';
-import { Paper, Text, ChipList } from '@karbin/shared/ui';
-import { IconCalendar } from '@tabler/icons';
 
 export interface BlogPost {
   title: string;

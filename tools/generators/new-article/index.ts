@@ -1,10 +1,9 @@
 import {
-  Tree,
   formatFiles,
-  installPackagesTask,
   generateFiles,
   joinPathFragments,
   names,
+  Tree,
 } from '@nrwl/devkit';
 
 interface NewArticleSchemaOptions {

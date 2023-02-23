@@ -1,4 +1,4 @@
-import { Section, Paper, Text } from '@karbin/shared/ui';
+import { Paper, Section, Text } from '@karbin/shared/ui';
 
 export interface QuickIntroductionSectionProps {
   sectionTitle: string;

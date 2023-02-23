@@ -1,8 +1,8 @@
-import { useMemo } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
+import { useMemo } from 'react';
 
-import { getVariantNames, filterVariants } from '../../utils/filter-variants';
 import { LoadingSpinner } from '../../atoms/loading-spinner/loading-spinner';
+import { filterVariants, getVariantNames } from '../../utils/filter-variants';
 
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 

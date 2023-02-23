@@ -1,5 +1,5 @@
+import { Avatar, Heading, Paper, Section, Text } from '@karbin/shared/ui';
 import Image, { StaticImageData } from 'next/image';
-import { Section, Heading, Avatar, Text, Paper } from '@karbin/shared/ui';
 
 export interface AboutSectionProps {
   sectionTitle: string;

@@ -1,9 +1,9 @@
+import { IconFile, IconMail } from '@tabler/icons';
+import Button from '../../atoms/button/button';
+import Text from '../../atoms/text/text';
+import CopyToClipboardButton from '../../molecules/copy-to-clipboard-button/copy-to-clipboard-button';
 import Paper from '../../molecules/paper/paper';
 import Stack from '../../molecules/stack/stack';
-import Button from '../../atoms/button/button';
-import CopyToClipboardButton from '../../molecules/copy-to-clipboard-button/copy-to-clipboard-button';
-import Text from '../../atoms/text/text';
-import { IconMail, IconFile } from '@tabler/icons';
 
 export interface EmailAndResumeBoxProps {
   email: string;

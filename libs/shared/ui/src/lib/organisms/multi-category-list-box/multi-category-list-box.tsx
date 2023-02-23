@@ -1,5 +1,5 @@
-import { Paper, PaperProps } from '../../molecules/paper/paper';
 import CategoryListBox from '../../molecules/category-list-box/category-list-box';
+import { Paper, PaperProps } from '../../molecules/paper/paper';
 
 export interface MultiCategoryListBoxProps extends PaperProps {
   classes?: string;

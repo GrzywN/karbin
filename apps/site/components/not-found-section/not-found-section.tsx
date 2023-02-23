@@ -1,6 +1,6 @@
+import { Button, Heading, Paper, Section, Text } from '@karbin/shared/ui';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
-import { Section, Paper, Heading, Text, Button } from '@karbin/shared/ui';
 
 export interface NotFoundSectionProps {
   sectionTitle: string;

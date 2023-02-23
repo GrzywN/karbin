@@ -1,5 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority';
-import { getVariantNames, filterVariants } from '../../utils/filter-variants';
+import { filterVariants, getVariantNames } from '../../utils/filter-variants';
 
 import type { OverridableComponentProps } from '../../OverridableComponentProps';
 
