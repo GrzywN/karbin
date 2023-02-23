@@ -41,7 +41,7 @@ export const getStaticProps = () => {
     props: {
       articleFrontMatters,
     },
-    revalidate: 1200,
+    revalidate: 15,
   };
 };
 

@@ -68,6 +68,7 @@ export const getStaticProps = async ({
       },
       nextArticleFrontMatter: nextArticleFrontMatter,
     },
+    revalidate: 15,
   };
 };
 
