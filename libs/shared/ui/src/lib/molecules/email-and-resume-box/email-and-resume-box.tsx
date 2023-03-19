@@ -8,12 +8,18 @@ import Stack from '../../molecules/stack/stack';
 export interface EmailAndResumeBoxProps {
   email: string;
   resumeFileName: string;
+  clipboardButtonLabel: string;
+  clipboardPopUpOnSuccessText: string;
+  clipboardPopUpOnErrorText: string;
 }
 
 export function EmailAndResumeBox(props: EmailAndResumeBoxProps) {
   const {
     email = 'example@example.com',
     resumeFileName = 'Resume-Jane-Doe.pdf',
+    clipboardButtonLabel = 'Copy to clipboard',
+    clipboardPopUpOnSuccessText = 'Copied to clipboard!',
+    clipboardPopUpOnErrorText = 'Failed to copy to clipboard!',
   } = props;
 
   return (
@@ -27,10 +33,10 @@ export function EmailAndResumeBox(props: EmailAndResumeBoxProps) {
             </Text>
           </Button>
           <CopyToClipboardButton
-            buttonLabel="Copy to clipboard"
+            buttonLabel={clipboardButtonLabel}
             textToCopy={email}
-            popUpTextOnSuccess="Copied to clipboard!"
-            popUpTextOnError="Failed to copy to clipboard!"
+            popUpTextOnSuccess={clipboardPopUpOnSuccessText}
+            popUpTextOnError={clipboardPopUpOnErrorText}
           />
         </address>
         <Text

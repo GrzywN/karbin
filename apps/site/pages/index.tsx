@@ -1,7 +1,9 @@
 import { getStringifiedJsonContent } from '@karbin/json-content';
 import { join } from 'path';
 import BlogPostsSection from '../components/blog-posts-section/blog-posts-section';
-import ContactSection from '../components/contact-section/contact-section';
+import ContactSection, {
+  ContactSectionProps,
+} from '../components/contact-section/contact-section';
 import MyWorkSection, {
   MyWorkSectionProps,
 } from '../components/my-work-section/my-work-section';
@@ -14,10 +16,15 @@ const CONTENT_PATH = join(process.cwd(), 'content/site');
 export interface IndexProps {
   quickIntroductionSectionContent: QuickIntroductionSectionProps;
   myWorkSectionContent: MyWorkSectionProps;
+  contactSectionContent: ContactSectionProps;
 }
 
 export function Index(props: IndexProps) {
-  const { quickIntroductionSectionContent, myWorkSectionContent } = props;
+  const {
+    quickIntroductionSectionContent,
+    myWorkSectionContent,
+    contactSectionContent,
+  } = props;
 
   return (
     <>
@@ -44,12 +51,7 @@ export function Index(props: IndexProps) {
           },
         ]}
       />
-      <ContactSection
-        sectionTitle="Get in touch"
-        heading="Get in touch"
-        email="karolbinkowski3@proton.me"
-        resumeFileName="Resume-Karol-Binkowski.pdf"
-      />
+      <ContactSection {...contactSectionContent} />
     </>
   );
 }
@@ -65,10 +67,16 @@ export async function getStaticProps({ locale }) {
     join(CONTENT_PATH, 'my-work-section')
   ) as QuickIntroductionSectionProps;
 
+  const contactSectionContent = getStringifiedJsonContent(
+    locale,
+    join(CONTENT_PATH, 'contact-section')
+  ) as QuickIntroductionSectionProps;
+
   return {
     props: {
       quickIntroductionSectionContent,
       myWorkSectionContent,
+      contactSectionContent,
     },
   };
 }
