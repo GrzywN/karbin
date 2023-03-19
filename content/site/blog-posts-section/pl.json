@@ -1,0 +1,18 @@
+{
+  "sectionTitle": "Wyróżnione artykuły",
+  "heading": "Wyróżnione artykuły 📝",
+  "posts": [
+    {
+      "title": "O psychologii Notion i fałszywej produktywności",
+      "slug": "o-psychologii-notion-i-falszywej-produktywnosci",
+      "whenPublished": "8.03.2023",
+      "tags": ["React", "TypeScript", "Design System"]
+    },
+    {
+      "title": "Dlaczego Vim może być lepszym wyborem niż popularny VS Code.",
+      "slug": "why-vim-might-be-a-better-choice-than-famous-vs-code",
+      "whenPublished": "16.01.2023",
+      "tags": ["Vim", "Linux", "Productivity"]
+    }
+  ]
+}

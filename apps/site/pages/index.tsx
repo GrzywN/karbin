@@ -1,6 +1,8 @@
 import { getStringifiedJsonContent } from '@karbin/json-content';
 import { join } from 'path';
-import BlogPostsSection from '../components/blog-posts-section/blog-posts-section';
+import BlogPostsSection, {
+  BlogPostsSectionProps,
+} from '../components/blog-posts-section/blog-posts-section';
 import ContactSection, {
   ContactSectionProps,
 } from '../components/contact-section/contact-section';
@@ -16,6 +18,7 @@ const CONTENT_PATH = join(process.cwd(), 'content/site');
 export interface IndexProps {
   quickIntroductionSectionContent: QuickIntroductionSectionProps;
   myWorkSectionContent: MyWorkSectionProps;
+  blogPostsSectionContent: BlogPostsSectionProps;
   contactSectionContent: ContactSectionProps;
 }
 
@@ -23,6 +26,7 @@ export function Index(props: IndexProps) {
   const {
     quickIntroductionSectionContent,
     myWorkSectionContent,
+    blogPostsSectionContent,
     contactSectionContent,
   } = props;
 
@@ -30,27 +34,7 @@ export function Index(props: IndexProps) {
     <>
       <QuickIntroductionSection {...quickIntroductionSectionContent} />
       <MyWorkSection {...myWorkSectionContent} />
-      <BlogPostsSection
-        sectionTitle="Featured blog posts"
-        heading={
-          <>
-            Featured blog posts <span className="ml-2">📝</span>
-          </>
-        }
-        posts={[
-          {
-            title: 'Why Vim might be a better choice than famous VS Code',
-            whenPublished: '1 month ago',
-            tags: ['Vim', 'Linux', 'Productivity'],
-          },
-          {
-            title:
-              'Creating Polymorphic React Components with TypeScript Generics',
-            whenPublished: '2 months ago',
-            tags: ['React', 'TypeScript', 'Design System'],
-          },
-        ]}
-      />
+      <BlogPostsSection {...blogPostsSectionContent} />
       <ContactSection {...contactSectionContent} />
     </>
   );
@@ -67,6 +51,11 @@ export async function getStaticProps({ locale }) {
     join(CONTENT_PATH, 'my-work-section')
   ) as QuickIntroductionSectionProps;
 
+  const blogPostsSectionContent = getStringifiedJsonContent(
+    locale,
+    join(CONTENT_PATH, 'blog-posts-section')
+  ) as QuickIntroductionSectionProps;
+
   const contactSectionContent = getStringifiedJsonContent(
     locale,
     join(CONTENT_PATH, 'contact-section')
@@ -76,6 +65,7 @@ export async function getStaticProps({ locale }) {
     props: {
       quickIntroductionSectionContent,
       myWorkSectionContent,
+      blogPostsSectionContent,
       contactSectionContent,
     },
   };

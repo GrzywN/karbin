@@ -72,10 +72,14 @@ export const getStaticProps = async ({
   };
 };
 
-export const getStaticPaths = () => {
-  const paths = readdirSync(POSTS_PATH)
-    .map((path) => path.replace(/\.mdx?$/, ''))
-    .map((slug) => ({ params: { slug } }));
+export const getStaticPaths = ({ locales }: { locales: string[] }) => {
+  const paths = locales
+    .map((locale) => {
+      return readdirSync(POSTS_PATH)
+        .map((path) => path.replace(/\.mdx?$/, ''))
+        .map((slug) => ({ params: { slug }, locale }));
+    })
+    .flat();
 
   return {
     paths,

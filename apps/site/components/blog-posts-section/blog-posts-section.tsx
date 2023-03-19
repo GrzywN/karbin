@@ -1,4 +1,4 @@
-import { Section, Heading } from '@karbin/shared/ui';
+import { Heading, Section } from '@karbin/shared/ui';
 
 import { BlogPostList } from '../blog-post-list/blog-post-list';
 
