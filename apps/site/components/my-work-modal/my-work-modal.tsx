@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import Image from 'next/image';
-import {
-  IconArrowRight,
-  IconSearch,
-  IconDeviceLaptop,
-  IconBrandGithub,
-} from '@tabler/icons';
 import {
   Button,
-  Modal,
-  Heading,
-  Text,
-  ChipList,
   ButtonGroup,
+  ChipList,
+  Heading,
+  Modal,
+  Text,
 } from '@karbin/shared/ui';
+import {
+  IconArrowRight,
+  IconBrandGithub,
+  IconDeviceLaptop,
+  IconSearch,
+} from '@tabler/icons';
+import Image from 'next/image';
+import { useState } from 'react';
 
 import Portal from '../../components/portal/portal';
 
@@ -28,8 +28,11 @@ export interface MyWorkModalProps {
   imageAlt: string;
   chips: string[];
   linkCaseStudy?: string;
+  linkCaseStudyText: string;
   linkPreview: string;
+  linkPreviewText: string;
   linkSource: string;
+  linkSourceText: string;
 }
 
 export function MyWorkModal(props: MyWorkModalProps) {
@@ -42,8 +45,11 @@ export function MyWorkModal(props: MyWorkModalProps) {
     imageAlt,
     chips = ['Lorem', 'Ipsum', 'Dolor sit'],
     linkCaseStudy,
+    linkCaseStudyText,
     linkPreview,
+    linkPreviewText,
     linkSource,
+    linkSourceText,
   } = props;
 
   const [opened, setOpened] = useState<boolean>(false);
@@ -101,7 +107,7 @@ export function MyWorkModal(props: MyWorkModalProps) {
                   isFullWidth
                 >
                   <IconSearch color="black" />
-                  Case study
+                  {linkCaseStudyText}
                 </ButtonGroup.Button>
               )}
               {linkPreview && (
@@ -115,7 +121,7 @@ export function MyWorkModal(props: MyWorkModalProps) {
                   isFullWidth
                 >
                   <IconDeviceLaptop color="black" />
-                  Preview
+                  {linkPreviewText}
                 </ButtonGroup.Button>
               )}
               {linkSource && (
@@ -129,7 +135,7 @@ export function MyWorkModal(props: MyWorkModalProps) {
                   isFullWidth
                 >
                   <IconBrandGithub color="white" />
-                  Source
+                  {linkSourceText}
                 </ButtonGroup.Button>
               )}
             </ButtonGroup>
