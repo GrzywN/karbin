@@ -1,0 +1,54 @@
+{
+  "sectionTitle": "Mój stack technologiczny",
+  "heading": "Mój stack technologiczny",
+  "categories": [
+    {
+      "heading": "Frontend",
+      "list": [
+        "HTML5 and CSS3",
+        "JavaScript",
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "TypeScript"
+      ]
+    },
+    {
+      "heading": "Design",
+      "list": ["Design Systems", "Figma", "Responsive Web Design", "Storybook"]
+    },
+    {
+      "heading": "Podejścia",
+      "list": [
+        "Atomic Design",
+        "BEM",
+        "Dostępność cyfrowa",
+        "Test-driven development",
+        "Wzorce projektowe"
+      ]
+    },
+    {
+      "heading": "Testowanie",
+      "list": [
+        "Cypress",
+        "Jest",
+        "React Testing Library",
+        "Test-driven development",
+        "Vitest"
+      ]
+    },
+    {
+      "heading": "Integracje",
+      "list": [
+        "Google Analytics",
+        "Google Maps",
+        "Headless CMS",
+        "Open Street Maps"
+      ]
+    },
+    {
+      "heading": "Narzędzia",
+      "list": ["Figma", "GIMP", "Git", "Linux", "Nx workspaces", "Vim"]
+    }
+  ]
+}
