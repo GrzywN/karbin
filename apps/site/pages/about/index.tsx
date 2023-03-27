@@ -26,6 +26,7 @@ export function AboutPage(props: AboutPageProps) {
     </>
   );
 }
+
 export async function getStaticProps({ locale }) {
   const aboutSectionContent = getStringifiedJsonContent(
     locale,
@@ -44,4 +45,5 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
+
 export default AboutPage;
