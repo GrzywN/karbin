@@ -37,6 +37,8 @@ export function MyWorkSection(props: MyWorkSectionProps) {
   const { sectionTitle, heading } = props;
   let { cards } = props;
 
+  if (cards == null) return null;
+
   cards = cards.map((card: CardData) => ({
     ...card,
     imageSrc: {
