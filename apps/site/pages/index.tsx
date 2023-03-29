@@ -49,17 +49,17 @@ export async function getStaticProps({ locale }) {
   const myWorkSectionContent = getStringifiedJsonContent(
     locale,
     join(CONTENT_PATH, 'my-work-section')
-  ) as QuickIntroductionSectionProps;
+  ) as MyWorkSectionProps;
 
   const blogPostsSectionContent = getStringifiedJsonContent(
     locale,
     join(CONTENT_PATH, 'blog-posts-section')
-  ) as QuickIntroductionSectionProps;
+  ) as BlogPostsSectionProps;
 
   const contactSectionContent = getStringifiedJsonContent(
     locale,
     join(CONTENT_PATH, 'contact-section')
-  ) as QuickIntroductionSectionProps;
+  ) as ContactSectionProps;
 
   return {
     props: {
