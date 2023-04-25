@@ -1,47 +1,41 @@
-import { Heading, Paper, Separator, Text } from '@karbin/shared/ui';
-import {
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconMail,
-  IconPhone,
-} from '@tabler/icons';
+import { Heading, Separator, Text } from '@karbin/shared/ui';
+import { IconBrandLinkedin, IconMail, IconPhone } from '@tabler/icons';
 import Image from 'next/image';
 
 import imageKarolBinkowski from '../../public/images/avatars/KarolBinkowski.png';
-import imageLogoBorKur from '../../public/images/logos/logoBorKur.svg';
-import imageLogoKarbin from '../../public/images/logos/logoKarbin.svg';
-import imageLogoPasja from '../../public/images/logos/logoPasja.png';
-import imageLogoTzn from '../../public/images/logos/logoTzn.jpg';
+import imageLogoBorKur from '../../public/images/logos/LogoBorKur.svg';
+import imageLogoKarbin from '../../public/images/logos/LogoKarbin.svg';
+import imageLogoPasja from '../../public/images/logos/LogoPasja.png';
+import imageLogoTzn from '../../public/images/logos/LogoTzn.jpg';
 
 export function Resume() {
   return (
-    <div className="">
-      <Paper
-        className="p-12 flex flex-col"
-        as="article"
-        color="light"
-        hasBorder
-      >
+    <>
+      <article className="flex flex-col h-[220vh]">
         <div className="flex gap-8 mb-8">
-          <Image
-            className="rounded-full border-4 border-primary-300 shadow-2xl w-72 h-72 lg:block"
-            src={imageKarolBinkowski}
-            alt="Karol Binkowski"
-            priority
-          />
           <div className="w-full h-full grid">
-            <Heading as="h1" color="dark" size="lg" weight="bold">
-              Karol Binkowski
-            </Heading>
-            <Text>Junior React Frontend Developer</Text>
-            <Separator className="my-3" size="xl" />
-            <div className="flex gap-6">
+            <div className="flex items-center gap-6 mb-4">
+              <Image
+                className="rounded-full border-4 border-primary-300 w-24 h-24"
+                src={imageKarolBinkowski}
+                alt="Karol Binkowski"
+                priority
+              />
+              <div className="flex flex-col">
+                <Heading as="h1" color="dark" size="lg" weight="bold">
+                  Karol Binkowski
+                </Heading>
+                <Text>Junior React Frontend Developer</Text>
+              </div>
+            </div>
+            <Separator size="xl" />
+            <div className="flex gap-6 mt-4">
               <div className="flex flex-col gap-3">
                 <Heading as="h2" size="sm">
                   About me
                 </Heading>
                 <Text size="xs" weight="medium">
-                  <strong>Hello</strong> 👋 I am a{' '}
+                  <strong>Welcome!</strong> I am a{' '}
                   <strong>Junior Front-end developer</strong> strongly focused
                   on <strong>React</strong> apps development, but I can adapt to
                   whatever tools are required.
@@ -49,14 +43,10 @@ export function Resume() {
               </div>
               <div className="ml-auto flex flex-col gap-3">
                 <Heading as="h2" size="sm">
-                  Connect with me
+                  Contact
                 </Heading>
                 <div>
                   <ul className="grid gap-2">
-                    <li className="inline-flex gap-1 items-center underline underline-offset-2">
-                      <IconBrandGithub />
-                      <Text size="sm">GitHub</Text>
-                    </li>
                     <li className="inline-flex gap-1 items-center underline underline-offset-2">
                       <IconBrandLinkedin />
                       <Text size="sm">LinkedIn</Text>
@@ -101,15 +91,22 @@ export function Resume() {
                 <Text size="xs">02/2022 - now</Text>
                 <Text size="md">
                   <strong>karolbinkowski.me</strong> - A modular, monorepo-based
-                  Digital Garden.
+                  digital garden.
                 </Text>
-                <ul className="mt-3 list-disc">
+                <ul className="mt-3 list-disc grid gap-1">
                   <li>
                     <Text size="xs" weight="medium">
                       Building a modular and monorepo-based website powered by a
                       dedicated design system,
                       <br /> which represents my personal brand in a
                       professional manner.
+                    </Text>
+                  </li>
+                  <li>
+                    <Text size="xs" weight="medium">
+                      Providing a comprehensive overview of my skills and
+                      experience, including details about my background,
+                      projects, and expertise in various domains.
                     </Text>
                   </li>
                   <li>
@@ -135,7 +132,7 @@ export function Resume() {
                   <strong>studiofryzurpasja.pl</strong> - A local business
                   hairdresser's website.
                 </Text>
-                <ul className="mt-3 list-disc">
+                <ul className="mt-3 list-disc grid gap-1">
                   <li>
                     <Text size="xs" weight="medium">
                       Designed and developed a landing page for Studio Fryzur
@@ -150,8 +147,16 @@ export function Resume() {
                   </li>
                   <li>
                     <Text size="xs" weight="medium">
+                      Ensured that the salon is prominently listed on Google
+                      Maps, making it easy for potential customers to locate the
+                      salon and plan their visit.
+                    </Text>
+                  </li>
+                  <li>
+                    <Text size="xs" weight="medium">
                       Optimized the landing page for performance and
-                      responsiveness.
+                      responsiveness, ensuring a seamless experience for
+                      visitors across different devices and screen sizes.
                     </Text>
                   </li>
                 </ul>
@@ -170,7 +175,7 @@ export function Resume() {
                   <strong>BOR-KUR.pl</strong> - A website for the BOR-KUR
                   chicken farm business.
                 </Text>
-                <ul className="mt-3 list-disc">
+                <ul className="mt-3 list-disc grid gap-1">
                   <li>
                     <Text size="xs" weight="medium">
                       Developed and deployed a website for BOR-KUR's poultry
@@ -290,8 +295,18 @@ export function Resume() {
             </div>
           </div>
         </div>
-      </Paper>
-    </div>
+      </article>
+      <footer className="text-center text-xs">
+        I agree to the processing of personal data provided in this document for
+        realising the recruitment process pursuant to the Personal Data
+        Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in
+        agreement with Regulation (EU) 2016/679 of the European Parliament and
+        of the Council of 27 April 2016 on the protection of natural persons
+        with regard to the processing of personal data and on the free movement
+        of such data, and repealing Directive 95/46/EC (General Data Protection
+        Regulation).
+      </footer>
+    </>
   );
 }
 

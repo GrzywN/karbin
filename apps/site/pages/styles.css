@@ -13,14 +13,3 @@
     @apply whitespace-pre-wrap !p-0 border-4 border-neutral-500;
   }
 }
-
-@media print {
-  * {
-    visibility: collapse;
-  }
-
-  .print,
-  .print * {
-    visibility: visible;
-  }
-}
