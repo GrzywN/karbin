@@ -36,7 +36,7 @@ export function Index() {
             textButton: 'Read more',
             modalTitle: 'BOR-KUR.pl',
             modalDescription: `
-                Dedicated website made for a chicken farm to increase its
+                A dedicated website made for a chicken farm to increase its
                 network of potential customers. It contains valuable information
                 to encourage potential contacts and mutual cooperation. It was
                 enhanced with additional features like a dark mode,
