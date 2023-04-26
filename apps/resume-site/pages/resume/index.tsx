@@ -11,7 +11,7 @@ import imageLogoTzn from '../../public/images/logos/LogoTzn.jpg';
 export function Resume() {
   return (
     <>
-      <article className="flex flex-col h-[220vh]">
+      <article className="flex flex-col">
         <div className="flex gap-8 mb-8">
           <div className="w-full h-full grid">
             <div className="flex items-center gap-6 mb-4">
@@ -35,7 +35,7 @@ export function Resume() {
                   About me
                 </Heading>
                 <Text size="xs" weight="medium">
-                  <strong>Welcome!</strong> I am a{' '}
+                  <strong>Hello!</strong> I am a{' '}
                   <strong>Junior Front-end developer</strong> strongly focused
                   on <strong>React</strong> apps development, but I can adapt to
                   whatever tools are required.
@@ -49,7 +49,7 @@ export function Resume() {
                   <ul className="grid gap-2">
                     <li className="inline-flex gap-1 items-center underline underline-offset-2">
                       <IconBrandLinkedin />
-                      <Text size="sm">LinkedIn</Text>
+                      <Text as="a" href="https://www.linkedin.com/in/grzywn/" link size="sm">LinkedIn</Text>
                     </li>
                     <li className="inline-flex gap-1 items-center underline underline-offset-2">
                       <IconMail />
@@ -79,46 +79,7 @@ export function Resume() {
           <Heading as="h2" color="dark" size="lg" weight="bold">
             Experience
           </Heading>
-          <div className="grid gap-12">
-            <div className="inline-flex gap-4">
-              <Image
-                className="rounded-full shadow-2xl w-16 h-16 p-2"
-                src={imageLogoKarbin}
-                alt="karolbinkowski.me"
-                priority
-              />
-              <div className="flex flex-col">
-                <Text size="xs">02/2022 - now</Text>
-                <Text size="md">
-                  <strong>karolbinkowski.me</strong> - A modular, monorepo-based
-                  digital garden.
-                </Text>
-                <ul className="mt-3 list-disc grid gap-1">
-                  <li>
-                    <Text size="xs" weight="medium">
-                      Building a modular and monorepo-based website powered by a
-                      dedicated design system,
-                      <br /> which represents my personal brand in a
-                      professional manner.
-                    </Text>
-                  </li>
-                  <li>
-                    <Text size="xs" weight="medium">
-                      Providing a comprehensive overview of my skills and
-                      experience, including details about my background,
-                      projects, and expertise in various domains.
-                    </Text>
-                  </li>
-                  <li>
-                    <Text size="xs" weight="medium">
-                      Ensuring a consistent and cohesive user experience across
-                      different sections of the website by implementing a design
-                      system specifically created for this project.
-                    </Text>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <div className="grid gap-8">
             <div className="inline-flex gap-4">
               <Image
                 className="rounded-full shadow-2xl w-16 h-16 p-2"
@@ -132,34 +93,6 @@ export function Resume() {
                   <strong>studiofryzurpasja.pl</strong> - A local business
                   hairdresser's website.
                 </Text>
-                <ul className="mt-3 list-disc grid gap-1">
-                  <li>
-                    <Text size="xs" weight="medium">
-                      Designed and developed a landing page for Studio Fryzur
-                      "Pasja", a local hair salon.
-                    </Text>
-                  </li>
-                  <li>
-                    <Text size="xs" weight="medium">
-                      Created a sleek and modern design to provide an engaging
-                      user experience.
-                    </Text>
-                  </li>
-                  <li>
-                    <Text size="xs" weight="medium">
-                      Ensured that the salon is prominently listed on Google
-                      Maps, making it easy for potential customers to locate the
-                      salon and plan their visit.
-                    </Text>
-                  </li>
-                  <li>
-                    <Text size="xs" weight="medium">
-                      Optimized the landing page for performance and
-                      responsiveness, ensuring a seamless experience for
-                      visitors across different devices and screen sizes.
-                    </Text>
-                  </li>
-                </ul>
               </div>
             </div>
             <div className="inline-flex gap-4">
@@ -175,32 +108,6 @@ export function Resume() {
                   <strong>BOR-KUR.pl</strong> - A website for the BOR-KUR
                   chicken farm business.
                 </Text>
-                <ul className="mt-3 list-disc grid gap-1">
-                  <li>
-                    <Text size="xs" weight="medium">
-                      Developed and deployed a website for BOR-KUR's poultry
-                      farm.
-                    </Text>
-                  </li>
-                  <li>
-                    <Text size="xs" weight="medium">
-                      Implemented Google Maps integration to facilitate
-                      potential customers in locating the farm.
-                    </Text>
-                  </li>
-                  <li>
-                    <Text size="xs" weight="medium">
-                      Added a dark mode option to enhance visual comfort for
-                      users.
-                    </Text>
-                  </li>
-                  <li>
-                    <Text size="xs" weight="medium">
-                      Enabled multilingual functionality to cater to diverse
-                      audiences.
-                    </Text>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
@@ -210,59 +117,59 @@ export function Resume() {
           <div className="grid grid-cols-2 items-start">
             <div className="grid gap-1">
               <Heading as="h3">Technical skills</Heading>
-              <ul className="mt-3 list-disc grid gap-2">
+              <ul className="mt-3">
                 <li>
-                  <Text>HTML and CSS</Text>
+                  <Text size="sm">HTML and CSS</Text>
                 </li>
                 <li>
-                  <Text>JavaScript and TypeScript</Text>
+                  <Text size="sm">JavaScript and TypeScript</Text>
                 </li>
                 <li>
-                  <Text>React</Text>
+                  <Text size="sm">React</Text>
                 </li>
                 <li>
-                  <Text>Next.js</Text>
+                  <Text size="sm">Next.js</Text>
                 </li>
                 <li>
-                  <Text>Jest | Testing Library | Cypress</Text>
+                  <Text size="sm">Jest | Testing Library | Cypress</Text>
                 </li>
                 <li>
-                  <Text>Git | GitHub</Text>
+                  <Text size="sm">Git | GitHub</Text>
                 </li>
               </ul>
             </div>
             <div className="grid gap-1">
               <Heading as="h3">Knowledge of</Heading>
-              <ul className="mt-3 list-disc grid gap-2">
+              <ul className="mt-3">
                 <li>
-                  <Text>Atomic Design</Text>
+                  <Text size="sm">Atomic Design</Text>
                 </li>
                 <li>
-                  <Text>BEM methodology</Text>
+                  <Text size="sm">BEM methodology</Text>
                 </li>
                 <li>
-                  <Text>Design patterns</Text>
+                  <Text size="sm">Design patterns</Text>
                 </li>
                 <li>
-                  <Text>Design systems</Text>
+                  <Text size="sm">Design systems</Text>
                 </li>
                 <li>
-                  <Text>Responsive Web Design</Text>
+                  <Text size="sm">Responsive Web Design</Text>
                 </li>
                 <li>
-                  <Text>Test-driven development</Text>
+                  <Text size="sm">Test-driven development</Text>
                 </li>
                 <li>
-                  <Text>Web accessibility</Text>
+                  <Text size="sm">Web accessibility</Text>
                 </li>
               </ul>
             </div>
           </div>
         </div>
         <Separator size="xl" />
-        <div className="flex flex-col gap-8 my-8">
+        <div className="flex flex-col gap-8 mt-8">
           <div className="grid grid-cols-3">
-            <div className="flex flex-col gap-8 col-span-2">
+            <div className="flex flex-col gap-4 col-span-2">
               <Heading as="h3">Education</Heading>
               <div className="inline-flex gap-4">
                 <Image
@@ -284,7 +191,7 @@ export function Resume() {
             </div>
             <div className="col-span-1">
               <Heading as="h3">Languages</Heading>
-              <ul className="mt-8 list-disc grid gap-1">
+              <ul className="mt-4 list-disc grid gap-1">
                 <li>
                   <Text>English (B2/C1)</Text>
                 </li>
@@ -296,7 +203,7 @@ export function Resume() {
           </div>
         </div>
       </article>
-      <footer className="text-center text-xs">
+      <footer className="mt-6 text-center text-[8px]">
         I agree to the processing of personal data provided in this document for
         realising the recruitment process pursuant to the Personal Data
         Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in
