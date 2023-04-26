@@ -1,13 +1,13 @@
-import QuickIntroductionSection from '../components/quick-introduction-section/quick-introduction-section';
-import MyWorkSection from '../components/my-work-section/my-work-section';
 import BlogPostsSection from '../components/blog-posts-section/blog-posts-section';
 import ContactSection from '../components/contact-section/contact-section';
+import MyWorkSection from '../components/my-work-section/my-work-section';
+import QuickIntroductionSection from '../components/quick-introduction-section/quick-introduction-section';
 
 import imageBorKur from '../public/images/work/BorKur.png';
-import imagePasja from '../public/images/work/Pasja.png';
-import imageYoutubeDownloader from '../public/images/work/YoutubeDownloader.png';
 import imageBorKurPreview from '../public/images/work/BorKurPreview.png';
+import imagePasja from '../public/images/work/Pasja.png';
 import imagePasjaPreview from '../public/images/work/PasjaPreview.png';
+import imageYoutubeDownloader from '../public/images/work/YoutubeDownloader.png';
 import imageYoutubeDownloaderPreview from '../public/images/work/YoutubeDownloaderPreview.png';
 
 export function Index() {
@@ -36,7 +36,7 @@ export function Index() {
             textButton: 'Read more',
             modalTitle: 'BOR-KUR.pl',
             modalDescription: `
-                Dedicated website made for a chicken farm to increase its
+                A dedicated website made for a chicken farm to increase its
                 network of potential customers. It contains valuable information
                 to encourage potential contacts and mutual cooperation. It was
                 enhanced with additional features like a dark mode,
