@@ -179,7 +179,7 @@ export function Resume() {
                   priority
                 />
                 <div className="flex flex-col">
-                  <Text size="xs">09/2022 - now</Text>
+                  <Text size="xs">09/2019 - 05/2023</Text>
                   <Text size="md" weight="bold">
                     Technical High School (TZN Częstochowa)
                   </Text>
