@@ -110,7 +110,7 @@ export function Index() {
         sectionTitle="Get in touch"
         heading="Get in touch"
         email="karolbinkowski3@proton.me"
-        resumeFileName="Resume-Karol-Binkowski.pdf"
+        resumeFileName="CV-Karol-Binkowski.pdf"
       />
     </>
   );
