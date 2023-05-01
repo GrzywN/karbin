@@ -4,7 +4,6 @@ import Image from 'next/image';
 
 import imageKarolBinkowski from '../../public/images/avatars/KarolBinkowski.png';
 import imageLogoBorKur from '../../public/images/logos/LogoBorKur.svg';
-import imageLogoKarbin from '../../public/images/logos/LogoKarbin.svg';
 import imageLogoPasja from '../../public/images/logos/LogoPasja.png';
 import imageLogoTzn from '../../public/images/logos/LogoTzn.jpg';
 
@@ -49,7 +48,14 @@ export function Resume() {
                   <ul className="grid gap-2">
                     <li className="inline-flex gap-1 items-center underline underline-offset-2">
                       <IconBrandLinkedin />
-                      <Text as="a" href="https://www.linkedin.com/in/grzywn/" link size="sm">LinkedIn</Text>
+                      <Text
+                        as="a"
+                        href="https://www.linkedin.com/in/grzywn/"
+                        link
+                        size="sm"
+                      >
+                        LinkedIn
+                      </Text>
                     </li>
                     <li className="inline-flex gap-1 items-center underline underline-offset-2">
                       <IconMail />
