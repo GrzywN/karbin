@@ -3,10 +3,16 @@
   "heading": "Wyróżnione artykuły 📝",
   "posts": [
     {
+      "title": "Metoda P.A.R.A, czyli jak prosto zorganizować sobie notatki",
+      "slug": "metoda-p.a.r.a-czyli-jak-prosto-zorganizowac-sobie-notatki",
+      "whenPublished": "2023-06-01T14:13:07.918Z",
+      "tags": ["Productivity", "Personal notes"]
+    },
+    {
       "title": "O psychologii Notion i fałszywej produktywności",
       "slug": "o-psychologii-notion-i-falszywej-produktywnosci",
       "whenPublished": "2023-03-08T17:50:09.471Z",
-      "tags": ["React", "TypeScript", "Design System"]
+      "tags": ["Productivity", "Personal notes", "Notion"]
     }
   ]
 }
