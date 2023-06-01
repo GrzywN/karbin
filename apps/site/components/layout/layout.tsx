@@ -65,7 +65,7 @@ export function Layout(props: LayoutProps) {
           <NavLinkWithNextRouting href="/about" name={about} />
           <NavLinkWithNextRouting href="/work" name={work} />
           <NavLinkWithNextRouting href="/articles" name={articles} />
-          <NavLink href="/Resume-Karol-Binkowski.pdf" name={resume} />
+          <NavLink href="/CV-Karol-Binkowski.pdf" name={resume} />
           <Button
             as="a"
             href="mailto:karolbinkowski3@proton.me"
