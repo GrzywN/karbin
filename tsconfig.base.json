@@ -18,6 +18,7 @@
       "@karbin/json-content": ["libs/json-content/src/index.ts"],
       "@karbin/markdown": ["libs/markdown/src/index.ts"],
       "@karbin/reading-time": ["libs/reading-time/src/index.ts"],
+      "@karbin/shared/slug": ["libs/shared/slug/src/index.ts"],
       "@karbin/shared/ui": ["libs/shared/ui/src/index.ts"]
     }
   },

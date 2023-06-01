@@ -1,5 +1,6 @@
 import { Paper, Stack, Text } from '@karbin/shared/ui';
 
+import { sortPostsBasedOnDate } from '../../utils/date';
 import {
   BlogPostPreviewCard,
   BlogPostPreviewCardProps,
@@ -11,6 +12,7 @@ export interface BlogPostListProps {
 
 export function BlogPostList(props: BlogPostListProps) {
   const { posts } = props;
+  sortPostsBasedOnDate(posts);
 
   return (
     <Paper className="max-w-3xl" hasPadding color="tertiary">

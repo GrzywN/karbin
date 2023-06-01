@@ -25,7 +25,7 @@ export function BlogPostPreviewCard(props: BlogPostPreviewCardProps) {
   } = props;
 
   return (
-    <Link href={`/article/${slug}`} shallow>
+    <Link href={`/articles/${slug}`} shallow>
       <Paper className="grid gap-4 p-2 hover:bg-tertiary-100">
         <Text as="h3" color="dark">
           {title}

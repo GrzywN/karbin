@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { readingTime } from '@karbin/reading-time';
+import { slugify } from '@karbin/shared/slug';
+import { Article, ArticleNavigationButton, Section } from '@karbin/shared/ui';
+import { MDXRemote } from 'next-mdx-remote';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { MDXRemote } from 'next-mdx-remote';
-import slugify from 'slugify';
-import { Section, Article, ArticleNavigationButton } from '@karbin/shared/ui';
-import { readingTime } from '@karbin/reading-time';
+import { useEffect } from 'react';
 
 import imageKarolBinkowski from '../../public/images/avatars/KarolBinkowski.png';
 
@@ -34,23 +34,12 @@ export function ArticleSection(props: ArticleSectionProps) {
     hljs.highlightAll();
   }, [router]);
 
-
   const handlePreviousArticleButtonClick = () => {
-    router.push(
-      `/article/${slugify(previousArticleFrontMatter.title, {
-        trim: true,
-        lower: true,
-      })}`
-    );
+    router.push(`/articles/${slugify(previousArticleFrontMatter.title)}`);
   };
 
   const handleNextArticleButtonClick = () => {
-    router.push(
-      `/article/${slugify(nextArticleFrontMatter.title, {
-        trim: true,
-        lower: true,
-      })}`
-    );
+    router.push(`/articles/${slugify(nextArticleFrontMatter.title)}`);
   };
 
   return (
