@@ -1,1 +1,1 @@
-export * from './lib/reading-speed';
+export * from './lib/reading-time';
