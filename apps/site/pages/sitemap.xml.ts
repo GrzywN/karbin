@@ -9,35 +9,39 @@ const BASE_URL = process.env.SITE_URL || 'https://karolbinkowski.me';
 const EXTERNAL_DATA_URL = `${BASE_URL}/article`;
 
 function generateSiteMap(posts: string[]) {
+  const locales = ['en', 'pl'];
+  const defaultLocale = 'en';
+  const sitemapItems = [];
+
+  sitemapItems.push(createSitemapItem(BASE_URL));
+  sitemapItems.push(createSitemapItem(`${BASE_URL}/about`));
+  sitemapItems.push(createSitemapItem(`${BASE_URL}/work`));
+  sitemapItems.push(createSitemapItem(`${BASE_URL}/articles`));
+
+  for (const slug of posts) {
+    for (const locale of locales) {
+      const url = `${EXTERNAL_DATA_URL}/${locale}/${slug}`;
+      sitemapItems.push(createSitemapItem(url));
+    }
+  }
+
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <url>
-       <loc>${BASE_URL}</loc>
-     </url>
-     <url>
-       <loc>${BASE_URL}/about</loc>
-     </url>
-     <url>
-       <loc>${BASE_URL}/work</loc>
-     </url>
-     <url>
-       <loc>${BASE_URL}/articles</loc>
-     </url>
-     ${posts
-       .map((slug: string) => {
-         return `
-       <url>
-           <loc>${`${EXTERNAL_DATA_URL}/${slug}`}</loc>
-       </url>
-     `;
-       })
-       .join('')}
+     ${sitemapItems.join('\n')}
    </urlset>
  `;
 }
 
+function createSitemapItem(url: string) {
+  return `
+       <url>
+           <loc>${url}</loc>
+       </url>
+     `;
+}
+
 function SiteMap() {
-  return;
+  return null;
 }
 
 export async function getServerSideProps({ res }) {
