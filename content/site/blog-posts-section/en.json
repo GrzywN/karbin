@@ -3,15 +3,9 @@
   "heading": "Featured blog posts 📝",
   "posts": [
     {
-      "title": "Why Vim might be a better choice than famous VS Code",
-      "slug": "why-vim-might-be-a-better-choice-than-famous-vs-code",
-      "whenPublished": "1 month ago",
-      "tags": ["Vim", "Linux", "Productivity"]
-    },
-    {
       "title": "Creating Polymorphic React Components with TypeScript Generics",
       "slug": "creating-polymorphic-react-components-with-typescript-generics",
-      "whenPublished": "2 months ago",
+      "whenPublished": "2023-01-16T09:52:29.519Z",
       "tags": ["React", "TypeScript", "Design System"]
     }
   ]

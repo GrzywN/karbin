@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { MDXRemote } from 'next-mdx-remote';
 import slugify from 'slugify';
 import { Section, Article, ArticleNavigationButton } from '@karbin/shared/ui';
+import { readingTime } from '@karbin/reading-time';
 
 import imageKarolBinkowski from '../../public/images/avatars/KarolBinkowski.png';
 
@@ -26,11 +27,13 @@ export function ArticleSection(props: ArticleSectionProps) {
     props;
   const { frontMatter, html } = currentArticle;
   const { title, date, tags, author } = frontMatter;
-  const router = useRouter();
+  const minutesToRead = readingTime(html.compiledSource);
 
+  const router = useRouter();
   useEffect(() => {
     hljs.highlightAll();
   }, [router]);
+
 
   const handlePreviousArticleButtonClick = () => {
     router.push(
@@ -64,7 +67,7 @@ export function ArticleSection(props: ArticleSectionProps) {
         }
         authorName={author.name}
         date={date}
-        minutesRead={12}
+        minutesRead={minutesToRead}
         tags={tags}
         contentNode={<MDXRemote {...html} />}
       />

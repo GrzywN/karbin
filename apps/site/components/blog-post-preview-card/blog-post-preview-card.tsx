@@ -1,12 +1,16 @@
 import { ChipList, Paper, Text } from '@karbin/shared/ui';
 import { IconCalendar } from '@tabler/icons';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import Link from 'next/link';
 import slugify from 'slugify';
+
+dayjs.extend(relativeTime);
 
 export interface BlogPost {
   title: string;
   slug?: string;
-  whenPublished: string | React.ReactNode;
+  whenPublished: string;
   tags: string[] | React.ReactNode[];
 }
 
@@ -28,7 +32,7 @@ export function BlogPostPreviewCard(props: BlogPostPreviewCardProps) {
         </Text>
         <div className="w-full flex flex-wrap gap-2 items-center">
           <span className="flex gap-2 mr-auto">
-            <IconCalendar /> {whenPublished}
+            <IconCalendar /> {dayjs().to(whenPublished)}
           </span>
           <ChipList>
             {tags.map((tag: string, index: number) => (
