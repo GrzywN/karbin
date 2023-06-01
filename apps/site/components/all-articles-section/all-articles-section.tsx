@@ -23,7 +23,7 @@ export function AllArticlesSection(props: AllArticlesSectionProps) {
   const posts = articleFrontMatters.map((frontMatter) => {
     return {
       title: frontMatter.title,
-      whenPublished: new Date(frontMatter.date).toLocaleDateString(),
+      whenPublished: frontMatter.date,
       tags: frontMatter.tags,
     };
   });
