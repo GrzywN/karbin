@@ -1,8 +1,8 @@
 import {
-  Section,
+  CategoryListBoxProps,
   Heading,
   MultiCategoryListBox,
-  CategoryListBoxProps,
+  Section,
 } from '@karbin/shared/ui';
 
 export interface MyToolsSectionProps {

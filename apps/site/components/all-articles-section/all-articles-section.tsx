@@ -1,21 +1,24 @@
-import { Section, Heading } from '@karbin/shared/ui';
+import { Heading, Section } from '@karbin/shared/ui';
 
 import BlogPostList from '../blog-post-list/blog-post-list';
 
 export interface AllArticlesSectionProps {
   sectionTitle: string;
-  articleFrontMatters: {
-    title: string;
-    date: string;
-    tags: string[];
-    author: {
-      name: string;
-    };
-  }[];
+  heading: string;
+  articleFrontMatters: ArticleFrontMatter[];
+}
+
+export interface ArticleFrontMatter {
+  title: string;
+  date: string;
+  tags: string[];
+  author: {
+    name: string;
+  };
 }
 
 export function AllArticlesSection(props: AllArticlesSectionProps) {
-  const { sectionTitle, articleFrontMatters = [] } = props;
+  const { sectionTitle, heading, articleFrontMatters = [] } = props;
 
   const posts = articleFrontMatters.map((frontMatter) => {
     return {
@@ -28,7 +31,7 @@ export function AllArticlesSection(props: AllArticlesSectionProps) {
   return (
     <Section title={sectionTitle}>
       <Heading as="h1" size="xl" color="light">
-        All articles
+        {heading}
       </Heading>
       <BlogPostList posts={posts} />
     </Section>

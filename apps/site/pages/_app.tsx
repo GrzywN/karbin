@@ -1,8 +1,8 @@
-import { AppProps } from 'next/app';
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
 import { Pacifico, Plus_Jakarta_Sans } from '@next/font/google';
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 import Layout from '../components/layout/layout';
 

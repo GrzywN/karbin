@@ -1,0 +1,54 @@
+{
+  "sectionTitle": "My tools",
+  "heading": "My tools",
+  "categories": [
+    {
+      "heading": "Frontend",
+      "list": [
+        "HTML5 and CSS3",
+        "JavaScript",
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "TypeScript"
+      ]
+    },
+    {
+      "heading": "Design",
+      "list": ["Design Systems", "Figma", "Responsive Web Design", "Storybook"]
+    },
+    {
+      "heading": "Approaches",
+      "list": [
+        "Atomic Design",
+        "BEM",
+        "Design Patterns",
+        "Test-driven development",
+        "Web Accessibility"
+      ]
+    },
+    {
+      "heading": "Testing",
+      "list": [
+        "Cypress",
+        "Jest",
+        "React Testing Library",
+        "Test-driven development",
+        "Vitest"
+      ]
+    },
+    {
+      "heading": "Integrations",
+      "list": [
+        "Google Analytics",
+        "Google Maps",
+        "Headless CMS",
+        "Open Street Maps"
+      ]
+    },
+    {
+      "heading": "Workflow",
+      "list": ["Figma", "GIMP", "Git", "Linux", "Nx workspaces", "Vim"]
+    }
+  ]
+}

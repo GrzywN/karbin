@@ -1,0 +1,60 @@
+{
+  "sectionTitle": "Moje projekty",
+  "heading": "Moje projekty 👇",
+  "cards": [
+    {
+      "imageFileName": "BorKur.png",
+      "imageAlt": "Podgląd strony internetowej BOR-KUR.",
+      "imagePriority": true,
+      "textHeading": "BOR-KUR",
+      "textParagraph": "Strona internetowa hodowli kurczaków.",
+      "textButton": "Czytaj dalej",
+      "modalTitle": "BOR-KUR.pl",
+      "modalDescription": "Dedykowana strona internetowa wykonana dla fermy kurczaków w celu zwiększenia sieci potencjalnych klientów. Zawiera cenne informacje zachęcające do potencjalnych kontaktów i wzajemnej współpracy. Została wzbogacona o dodatkowe funkcje takie jak tryb ciemny, wielojęzyczność oraz skracacz linków zabezpieczony hasłem na prośbę klienta.",
+      "modalImageFileName": "BorKurPreview.png",
+      "modalImageAlt": "Podgląd strony internetowej BOR-KUR.",
+      "modalTags": ["Next.js", "TypeScript", "Contentful", "i18n"],
+      "modalLinkCaseStudyText": "Case study",
+      "modalLinkPreview": "https://bor-kur.pl/",
+      "modalLinkPreviewText": "Podgląd",
+      "modalLinkSource": "https://github.com/GrzywN/bor-kur",
+      "modalLinkSourceText": "Kod źródłowy"
+    },
+    {
+      "imageFileName": "Pasja.png",
+      "imageAlt": "Podgląd strony internetowej Studio Fryzur Pasja.",
+      "imagePriority": true,
+      "textHeading": "Studio Fryzur Pasja",
+      "textParagraph": "Strona internetowa salonu fryzjerskiego.",
+      "textButton": "Czytaj dalej",
+      "modalTitle": "Studio Fryzur Pasja",
+      "modalDescription": "Dedykowana strona internetowa dla salonu fryzjerskiego, która służy jako lokalna wizytówka firmy i ma na celu wyróżnienie firmy wśród konkurencji. Moje usługi dodatkowo obejmowały umieszczenie salonu fryzjerskiego na mapach Google oraz promocję poprzez Google Ads.",
+      "modalImageFileName": "PasjaPreview.png",
+      "modalImageAlt": "Podgląd strony internetowej Studio Fryzur Pasja.",
+      "modalTags": ["Next.js", "Tailwind CSS", "Google Maps API"],
+      "modalLinkCaseStudyText": "Case study",
+      "modalLinkPreview": "https://studiofryzurpasja.pl/",
+      "modalLinkPreviewText": "Podgląd",
+      "modalLinkSource": "https://github.com/GrzywN/pasja",
+      "modalLinkSourceText": "Kod źródłowy"
+    },
+    {
+      "imageFileName": "YoutubeDownloader.png",
+      "imageAlt": "Podgląd aplikacji Youtube Downloader.",
+      "imagePriority": true,
+      "textHeading": "Youtube Downloader",
+      "textParagraph": "Pobieranie filmów i muzyki z YouTube z wbudowanym wyszukiwaniem.",
+      "textButton": "Czytaj dalej",
+      "modalTitle": "Youtube Downloader",
+      "modalDescription": "Prosty downloader dla serwisu YouTube, który sprawia, że pobieranie filmów czy całych playlist wysokiej jakości muzyki jest naprawdę bardzo proste. Nie musisz już używać przeglądarki do wyszukiwania linków z YouTube ani korzystać z żadnych usług online.",
+      "modalImageFileName": "YoutubeDownloaderPreview.png",
+      "modalImageAlt": "Podgląd aplikacji Youtube Downloader.",
+      "modalTags": ["Electron", "JavaScript", "Bulma"],
+      "modalLinkCaseStudyText": "Case study",
+      "modalLinkPreview": "https://raw.githubusercontent.com/GrzywN/Youtube-Downloader/main/screenshot.gif",
+      "modalLinkPreviewText": "Podgląd",
+      "modalLinkSource": "https://github.com/GrzywN/Youtube-Downloader",
+      "modalLinkSourceText": "Kod źródłowy"
+    }
+  ]
+}

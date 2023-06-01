@@ -1,0 +1,42 @@
+{
+  "sectionTitle": "My work",
+  "heading": "My work",
+  "projects": [
+    {
+      "title": "BOR-KUR.pl",
+      "description": "Dedicated website made for a chicken farm to increase its network of potential customers. It contains valuable information to encourage potential contacts and mutual cooperation. It was enhanced with additional features like a dark mode, multilingualism and a password-protected link shortener on request.",
+      "imageFileName": "BorKurPreview.png",
+      "imageAlt": "A BOR-KUR website preview.",
+      "tags": ["Next.js", "Headless CMS", "i18n"],
+      "linkCaseStudyText": "Case study",
+      "linkPreview": "https://bor-kur.pl/",
+      "linkPreviewText": "Preview",
+      "linkSource": "https://github.com/GrzywN/bor-kur",
+      "linkSourceText": "Source"
+    },
+    {
+      "title": "Studio Fryzur Pasja",
+      "description": "A dedicated website that serves as the local company's business card and aims to make the company stand out among its competitors. My services additionally included placement of the hair salon on Google maps and promotion through Google Ads.",
+      "imageFileName": "PasjaPreview.png",
+      "imageAlt": "Studio Fryzur Pasja's website preview.",
+      "tags": ["Next.js", "Tailwind CSS", "Google Maps API"],
+      "linkCaseStudyText": "Case study",
+      "linkPreview": "https://studiofryzurpasja.pl/",
+      "linkPreviewText": "Preview",
+      "linkSource": "https://github.com/GrzywN/pasja",
+      "linkSourceText": "Source"
+    },
+    {
+      "title": "Youtube Downloader",
+      "description": "Simple youtube downloader which makes downloading youtube videos, high-quality music from a playlist or by search results really easy. You don't need to use your browser to search for youtube links anymore or use any of the online services.",
+      "imageFileName": "YoutubeDownloaderPreview.png",
+      "imageAlt": "A preview of Youtube Downloader app.",
+      "tags": ["Electron", "JavaScript", "Bulma"],
+      "linkCaseStudyText": "Case study",
+      "linkPreview": "https://raw.githubusercontent.com/GrzywN/Youtube-Downloader/main/screenshot.gif",
+      "linkPreviewText": "Preview",
+      "linkSource": "https://github.com/GrzywN/Youtube-Downloader",
+      "linkSourceText": "Source"
+    }
+  ]
+}

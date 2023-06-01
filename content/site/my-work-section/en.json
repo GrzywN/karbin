@@ -1,0 +1,60 @@
+{
+  "sectionTitle": "My work",
+  "heading": "My work 👇",
+  "cards": [
+    {
+      "imageFileName": "BorKur.png",
+      "imageAlt": "A BOR-KUR website preview.",
+      "imagePriority": true,
+      "textHeading": "BOR-KUR",
+      "textParagraph": "A chicken farm website.",
+      "textButton": "Read more",
+      "modalTitle": "BOR-KUR.pl",
+      "modalDescription": "Dedicated website made for a chicken farm to increase its network of potential customers. It contains valuable information to encourage potential contacts and mutual cooperation. It was enhanced with additional features like a dark mode, multilingualism and a password-protected link shortener on request.",
+      "modalImageFileName": "BorKurPreview.png",
+      "modalImageAlt": "A BOR-KUR website preview.",
+      "modalTags": ["Next.js", "TypeScript", "Contentful", "i18n"],
+      "modalLinkCaseStudyText": "Case study",
+      "modalLinkPreview": "https://bor-kur.pl/",
+      "modalLinkPreviewText": "Preview",
+      "modalLinkSource": "https://github.com/GrzywN/bor-kur",
+      "modalLinkSourceText": "Source"
+    },
+    {
+      "imageFileName": "Pasja.png",
+      "imageAlt": "Studio Fryzur Pasja's website preview.",
+      "imagePriority": true,
+      "textHeading": "Studio Fryzur Pasja",
+      "textParagraph": "A local business hairdresser's website.",
+      "textButton": "Read more",
+      "modalTitle": "Studio Fryzur Pasja",
+      "modalDescription": "A dedicated website that serves as the local company's business card and aims to make the company stand out among its competitors. My services additionally included placement of the hair salon on Google maps and promotion through Google Ads.",
+      "modalImageFileName": "PasjaPreview.png",
+      "modalImageAlt": "Studio Fryzur Pasja's website preview.",
+      "modalTags": ["Next.js", "Tailwind CSS", "Google Maps API"],
+      "modalLinkCaseStudyText": "Case study",
+      "modalLinkPreview": "https://studiofryzurpasja.pl/",
+      "modalLinkPreviewText": "Preview",
+      "modalLinkSource": "https://github.com/GrzywN/pasja",
+      "modalLinkSourceText": "Source"
+    },
+    {
+      "imageFileName": "YoutubeDownloader.png",
+      "imageAlt": "A preview of Youtube Downloader app.",
+      "imagePriority": true,
+      "textHeading": "Youtube Downloader",
+      "textParagraph": "A simple youtube downloader with built-in search.",
+      "textButton": "Read more",
+      "modalTitle": "Youtube Downloader",
+      "modalDescription": "Simple youtube downloader which makes downloading youtube videos, high-quality music from a playlist or by search results really easy. You don't need to use your browser to search for youtube links anymore or use any of the online services.",
+      "modalImageFileName": "YoutubeDownloaderPreview.png",
+      "modalImageAlt": "A preview of Youtube Downloader app.",
+      "modalTags": ["Electron", "JavaScript", "Bulma"],
+      "modalLinkCaseStudyText": "Case study",
+      "modalLinkPreview": "https://raw.githubusercontent.com/GrzywN/Youtube-Downloader/main/screenshot.gif",
+      "modalLinkPreviewText": "Preview",
+      "modalLinkSource": "https://github.com/GrzywN/Youtube-Downloader",
+      "modalLinkSourceText": "Source"
+    }
+  ]
+}

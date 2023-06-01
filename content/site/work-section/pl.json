@@ -1,0 +1,42 @@
+{
+  "sectionTitle": "Moje projekty",
+  "heading": "Moje projekty",
+  "projects": [
+    {
+      "title": "BOR-KUR.pl",
+      "description": "Dedykowana strona internetowa wykonana dla fermy kurczaków w celu zwiększenia sieci potencjalnych klientów. Zawiera cenne informacje zachęcające do potencjalnych kontaktów i wzajemnej współpracy. Została wzbogacona o dodatkowe funkcje takie jak tryb ciemny, wielojęzyczność oraz skracacz linków zabezpieczony hasłem na prośbę klienta.",
+      "imageFileName": "BorKurPreview.png",
+      "imageAlt": "Podgląd strony internetowej BOR-KUR.",
+      "tags": ["Next.js", "Headless CMS", "i18n"],
+      "linkCaseStudyText": "Case study",
+      "linkPreview": "https://bor-kur.pl/",
+      "linkPreviewText": "Podgląd",
+      "linkSource": "https://github.com/GrzywN/bor-kur",
+      "linkSourceText": "Kod źródłowy"
+    },
+    {
+      "title": "Studio Fryzur Pasja",
+      "description": "Dedykowana strona internetowa dla salonu fryzjerskiego, która służy jako lokalna wizytówka firmy i ma na celu wyróżnienie firmy wśród konkurencji. Moje usługi dodatkowo obejmowały umieszczenie salonu fryzjerskiego na mapach Google oraz promocję poprzez Google Ads.",
+      "imageFileName": "PasjaPreview.png",
+      "imageAlt": "Podgląd strony internetowej Studio Fryzur Pasja.",
+      "tags": ["Next.js", "Tailwind CSS", "Google Maps API"],
+      "linkCaseStudyText": "Case study",
+      "linkPreview": "https://studiofryzurpasja.pl/",
+      "linkPreviewText": "Podgląd",
+      "linkSource": "https://github.com/GrzywN/pasja",
+      "linkSourceText": "Kod źródłowy"
+    },
+    {
+      "title": "Youtube Downloader",
+      "description": "Prosty downloader dla serwisu YouTube, który sprawia, że pobieranie filmów czy całych playlist wysokiej jakości muzyki jest naprawdę bardzo proste. Nie musisz już używać przeglądarki do wyszukiwania linków z YouTube ani korzystać z żadnych usług online.",
+      "imageFileName": "YoutubeDownloaderPreview.png",
+      "imageAlt": "Podgląd aplikacji Youtube Downloader.",
+      "tags": ["Electron", "JavaScript", "Bulma"],
+      "linkCaseStudyText": "Case study",
+      "linkPreview": "https://raw.githubusercontent.com/GrzywN/Youtube-Downloader/main/screenshot.gif",
+      "linkPreviewText": "Podgląd",
+      "linkSource": "https://github.com/GrzywN/Youtube-Downloader",
+      "linkSourceText": "Kod źródłowy"
+    }
+  ]
+}

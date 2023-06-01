@@ -10,14 +10,18 @@ import { IconBrandGithub, IconDeviceLaptop, IconSearch } from '@tabler/icons';
 import Image, { StaticImageData } from 'next/image';
 
 export interface Project {
-  imageSrc: StaticImageData;
+  imageFileName: string;
   imageAlt: string;
   title: string;
   description: string;
   tags: string[];
   linkCaseStudy?: string;
+  linkCaseStudyText: string;
   linkPreview: string;
+  linkPreviewText: string;
   linkSource: string;
+  linkSourceText: string;
+  imageSrc?: StaticImageData;
 }
 
 export interface WorkSectionProps {
@@ -27,7 +31,19 @@ export interface WorkSectionProps {
 }
 
 export function WorkSection(props: WorkSectionProps) {
-  const { sectionTitle, heading, projects } = props;
+  const { sectionTitle, heading } = props;
+  let { projects } = props;
+
+  if (projects == null) return null;
+
+  projects = projects.map((project: Project) => ({
+    ...project,
+    imageSrc: {
+      src: `/images/work/${project.imageFileName}`,
+      width: 1000,
+      height: 1000,
+    },
+  }));
 
   return (
     <Section title={sectionTitle}>
@@ -62,7 +78,7 @@ export function WorkSection(props: WorkSectionProps) {
                   isFullWidth
                 >
                   <IconSearch color="black" />
-                  Case study
+                  {project.linkCaseStudyText}
                 </ButtonGroup.Button>
               )}
               {project.linkPreview && (
@@ -76,7 +92,7 @@ export function WorkSection(props: WorkSectionProps) {
                   isFullWidth
                 >
                   <IconDeviceLaptop color="black" />
-                  Preview
+                  {project.linkPreviewText}
                 </ButtonGroup.Button>
               )}
               {project.linkSource && (
@@ -90,7 +106,7 @@ export function WorkSection(props: WorkSectionProps) {
                   isFullWidth
                 >
                   <IconBrandGithub color="white" />
-                  Source
+                  {project.linkSourceText}
                 </ButtonGroup.Button>
               )}
             </ButtonGroup>

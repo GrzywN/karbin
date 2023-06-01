@@ -1,25 +1,30 @@
+import { Card, Heading, Section, Text } from '@karbin/shared/ui';
 import Image from 'next/image';
-import { Section, Heading, Card, Text } from '@karbin/shared/ui';
 
 import MyWorkModal from '../my-work-modal/my-work-modal';
 
 import type { StaticImageData } from 'next/image';
 
 export interface CardData {
-  imageSrc: StaticImageData;
+  imageFileName: string;
   imageAlt: string;
   imagePriority?: boolean;
   textHeading: string | React.ReactNode;
   textParagraph: string | React.ReactNode;
   textButton: string;
-  modalImageSrc: StaticImageData;
+  modalImageFileName: string;
   modalImageAlt: string;
   modalTitle: string;
   modalDescription: string;
   modalTags: string[];
   modalLinkCaseStudy?: string;
+  modalLinkCaseStudyText?: string;
   modalLinkPreview: string;
+  modalLinkPreviewText: string;
   modalLinkSource: string;
+  modalLinkSourceText: string;
+  imageSrc?: StaticImageData;
+  modalImageSrc?: StaticImageData;
 }
 
 export interface MyWorkSectionProps {
@@ -29,7 +34,24 @@ export interface MyWorkSectionProps {
 }
 
 export function MyWorkSection(props: MyWorkSectionProps) {
-  const { sectionTitle, heading, cards } = props;
+  const { sectionTitle, heading } = props;
+  let { cards } = props;
+
+  if (cards == null) return null;
+
+  cards = cards.map((card: CardData) => ({
+    ...card,
+    imageSrc: {
+      src: `/images/work/${card.imageFileName}`,
+      width: 1920,
+      height: 1080,
+    },
+    modalImageSrc: {
+      src: `/images/work/${card.modalImageFileName}`,
+      width: 1000,
+      height: 1000,
+    },
+  }));
 
   return (
     <Section title={sectionTitle}>
@@ -52,8 +74,11 @@ export function MyWorkSection(props: MyWorkSectionProps) {
               modalDescription,
               modalTags,
               modalLinkCaseStudy,
+              modalLinkCaseStudyText,
               modalLinkPreview,
+              modalLinkPreviewText,
               modalLinkSource,
+              modalLinkSourceText,
             },
             index
           ) => (
@@ -76,8 +101,11 @@ export function MyWorkSection(props: MyWorkSectionProps) {
                   description={modalDescription}
                   chips={modalTags}
                   linkCaseStudy={modalLinkCaseStudy}
+                  linkCaseStudyText={modalLinkCaseStudyText}
                   linkPreview={modalLinkPreview}
+                  linkPreviewText={modalLinkPreviewText}
                   linkSource={modalLinkSource}
+                  linkSourceText={modalLinkSourceText}
                 />
               </Card.Body>
             </Card>

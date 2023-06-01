@@ -14,7 +14,7 @@ export function BlogPostList(props: BlogPostListProps) {
 
   return (
     <Paper className="max-w-3xl" hasPadding color="tertiary">
-      {posts.length > 0 ? (
+      {posts?.length > 0 ? (
         <Stack>
           {posts.map((postProps: BlogPostPreviewCardProps, index) => (
             <BlogPostPreviewCard key={index} {...postProps} />

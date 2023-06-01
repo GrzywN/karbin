@@ -1,0 +1,10 @@
+{
+  "sectionTitle": "O mnie",
+  "heading": "O mnie",
+  "paragraphs": [
+    "Hej 👋 Jestem Junior Front-end developerem ukierunkowanym na tworzenie aplikacji w React/React Native, ale potrafię się szybko zaadaptować do dowolnych narzędzi.",
+    "Obecnie mam na swoim koncie kilka komercyjnych projektów, a poza tym miałem już swój wkład w projekty open-source'owe takie jak Nx. Mieszkam niedaleko Częstochowy, ale chętnie podejmę pracę zdalną.",
+    "Kiedy nie koduję, można mnie znaleźć na świeżym powietrzu. Uwielbiam przebywać na łonie natury, czy to chodząc na spacery, jeżdżąc na rowerze, czytając książki czy po prostu spędzając czas z przyjaciółmi."
+  ],
+  "imageAlt": "Karol Binkowski"
+}
