@@ -1,0 +1,100 @@
+---
+title: 'Nest.js - Pierwsze kroki'
+excerpt: ''
+date: '2023-06-01T14:53:32.754Z'
+tags: ['Nest.js', 'Node.js', 'Back-end']
+author:
+  name: Karol Binkowski
+---
+
+# Nest.js - Pierwsze kroki
+
+## Utworzenie nowego projektu
+
+```bash
+$ npm i -g @nestjs/cli
+$ nest new project-name --strict
+```
+
+### Wskazówka
+
+> Aby utworzyć projekt z włączonym strict modem w TypeScript, trzeba dodać flagę --strict do polecenia `nest new`
+
+## Główny plik aplikacji main.ts
+
+```ts
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+Na instancji `app` dodajemy różne rzeczy w zależności, od tego co, potrzebujemy, zazwyczaj pomiędzy `app` i `app.listen(3000)`.
+
+### Rozbudowany plik main.ts z walidacją
+
+```ts
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { ValidationPipe } from '@nestjs/common';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      transform: true,
+      forbidNonWhitelisted: true,
+    })
+  );
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+### Wskazówka
+
+> Jeżeli zamiast exit code 1 po błędzie chcemy mieć wyrzucony wyjątek, to wtedy można użyć `NestFactory.create(AppModule, { abortOnError: false })`.
+
+## Platforma
+
+**Nest.js** może używać zarówno **Express**, jak i **Fastify**. Najlepiej jest pisać wszystko w Nest.js, ponieważ ten jest **abstrakcją** nad frameworkami i migracja będzie wówczas łatwiejsza. Nest natomiast daje możliwość sięgania do API naszej platformy za pomocą np. dekoratorów, ale raczej powinno się tego unikać.
+
+### Typy i platforma
+
+Aby zaznaczyć dodatkowo jakiej platformy używamy, możemy wykorzystać typ generyczny w celu wprowadzenia wybranej przez nas platformy.
+
+```typescript
+const app = await NestFactory.create<NestExpressApplication>(AppModule);
+```
+
+## Załączenie serwera developerskiego
+
+```bash
+$ npm run start:dev
+```
+
+### Pozostałe skrypty npm zawarte po utworzeniu nowego projektu
+
+```json
+{
+  "scripts": {
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  }
+}
+```
